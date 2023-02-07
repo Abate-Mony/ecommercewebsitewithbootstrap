@@ -1,0 +1,88 @@
+.ourblog__container {
+    border: 1px solid limegreen;
+}
+
+.ourblog__container .ourblog__rightside-container {
+    /* width: fit-content; */
+}
+
+.ourblog__rightside-container .ourblog__rightside-card {
+    /* border: 1px solid orange; */
+}
+
+.ourblog__rightside-container .ourblog__rightside-card h3,
+.ourblog__rightside-container .ourblog__rightside-card h4 {
+    font-size: 1.2rem;
+    line-height: 40px;
+    font-weight: 600;
+}
+
+.ourblog__rightside-container .ourblog__rightside-card h4 {
+    font-size: 1rem;
+    line-height: 20px;
+}
+
+.ourblog__rightside-container .ourblog__rightside-card p {
+    font-size: 0.9rem;
+    line-height: 1.6rem;
+    font-weight: 400;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.ourblog__rightside-container .ourblog__rightside-card p:hover {
+    font-weight: 600;
+    /* color: rgb(19, 17, 17); */
+    padding-left: 1rem;
+    color: greenyellow !important;
+}
+
+.ourblog__rightside-card_content {
+    /* border: 1px solid orange; */
+}
+
+
+/* .ourblog__rightside-card_content p:hover {
+} */
+
+.ourblog__rightside-card_content .shopby__dropdownitems ul {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.4s ease;
+}
+
+.ourblog__rightside-card_content .shopby__dropdownitems:hover>ul {
+    height: fit-content;
+}
+
+.ourblog__rightside-card_content .shopby__dropdownitems ul li {
+    color: gray;
+    list-style: none;
+    padding-right: 1rem;
+    line-height: 20px;
+    padding-bottom: 0.2rem;
+    font-weight: 400;
+    transition: font-weight 0.1s ease;
+}
+
+.ourblog__rightside-card_content .shopby__dropdownitems ul li:hover {
+    font-weight: 500;
+    color: var(--color-232f3e);
+}
+
+@media screen and (max-width:600px) {
+    .ourblog__rightside-main_container {
+        user-select: none;
+        position: absolute;
+        height: 100%;
+        left: 1rem !important;
+        top: 2rem;
+        width: 100%;
+        background: rgb(56, 55, 55, 0.12);
+        padding: 1rem 0;
+        margin-top: 1rem !important;
+    }
+    .ourblog__container .ourblog__rightside-container {
+        width: fit-content;
+    }
+}

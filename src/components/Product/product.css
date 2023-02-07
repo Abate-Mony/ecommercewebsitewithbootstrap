@@ -1,0 +1,9 @@
+.home__collection-img_container img {
+    height: 13rem;
+}
+
+@media screen and (max-width:600px) {
+    .home__collection-img_container img {
+        height: 10rem;
+    }
+}

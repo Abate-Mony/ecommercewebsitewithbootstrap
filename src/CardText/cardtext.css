@@ -1,0 +1,42 @@
+.home__collection-container .home__collection-content p {
+    font-size: 1.1rem;
+    line-height: 20px;
+    letter-spacing: -0.01rem;
+}
+
+.home__collection-container .home__collection-price_container p {
+    font-size: 0.9rem;
+    line-height: 20px;
+    letter-spacing: -0.01rem;
+}
+
+.home__collection-img_overlay-container {
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.home__collection-img_overlay-container:hover {
+    opacity: 0;
+    scale: 1.2;
+}
+
+.home__collection-img_container:hover {
+    opacity: 1;
+}
+
+@media screen and (max-width:600px) {
+    .home__collection-container .home__collection-content h4 {
+        font-size: 1.3rem;
+        line-height: 30px;
+    }
+    .home__collection-container .home__collection-content p {
+        font-size: 0.9rem;
+        line-height: 15px;
+        letter-spacing: 0.01rem;
+    }
+    .home__collection-container .home__collection-price_container p {
+        font-size: 0.7rem !important;
+        line-height: 15px;
+        letter-spacing: -0.01rem;
+    }
+}
