@@ -177,16 +177,6 @@ const ProductDataFashion = [{
 
     },
     {
-        productImage1: headphones_b_1,
-        productImage2: headphones_b_2,
-        productImage3: headphones_b_3,
-        productImage4: headphones_b_4,
-        productName: "Headphone 1",
-        productDescript: "Find the best HeadPhones here ",
-        productPrice: 1223,
-        productCancel: 222
-
-    }, {
         productImage1: product_01b,
         productImage2: product_02b,
         productImage3: product_03b,

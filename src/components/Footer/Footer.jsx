@@ -5,11 +5,12 @@ import {NavLink} from "react-router-dom"
 import{AiOutlineHome,AiOutlineMenu,AiOutlineStar} from 'react-icons/ai'
 import{BsBag} from 'react-icons/bs'
 import newsletter from '../../assest/images/newsletter.png'
-const Footer = () => {
+const Footer = ({setToggleSideBar}) => {
+
   const vibrateConst=20
   return (
-    <div className='footer__container'>
-    <div className="position-fixed bottom-0 left-0 right-0 w-100 px-2 py-3 bg-dark d-md-none bg-opacity-75" style={{zIndex:120}}>
+    <div className='footer__container bg__primary'>
+    <div className="position-fixed bottom-0 left-0 right-0 w-100 px-2 py-3 bg-dark d-md-none bg-opacity-75 " style={{zIndex:120}}>
     <div className="d-flex align-items-center justify-content-between px-4">
     
     <NavLink to={"/"} onClick={function(){
@@ -33,21 +34,21 @@ const Footer = () => {
     <AiOutlineStar color='white' size={20}/>
     
     </NavLink>
-    <NavLink to={"/basket"} className="position-relative">
+    <div  className="position-relative" onClick={()=>setToggleSideBar(function(){
+    return true
+    })}>
     
-    <BsBag color='white' size={20} onClick={function(){
-                return (window.navigator.vibrate([vibrateConst]))
-                }}/>
+    <BsBag color='white' />
                 <div className="position-absolute  " style={{
                 top:"-6px",right:"-5px"}}>
                 <div className="btn btn-danger rounded-circle p-0 d-flex align-items-center justify-content-center" style={{fontSize:"0.5rem",width:"15px",height:"15px"}}>0</div>
                 </div>
-    </NavLink>
+    </div>
     </div>
     
     </div>
     
-      <footer className='py-3 '>
+      <footer className='py-3 bg__primary'>
         <div className="container-xxl">
           <div className="row py-3 justify-content-center   px-2">
 
@@ -76,7 +77,7 @@ const Footer = () => {
                     aria-describedby='basic-addon2'
 
                   />
-                  <span className='input-group-text border border-2'
+                  <span className='input-group-text bg-light text-white border border-2'
                     id="basic-addon2">Subscribe </span>
                 </div>
               </div>
@@ -90,14 +91,14 @@ const Footer = () => {
 
 
       </footer>
-      <footer className='py-5 px-2 px-md-3 px-lg-4'>
-        <div class="container-xxl">
+      <footer className='py-5 px-2 px-md-3 px-lg-4 bg__primary'>
+        <div className="container-xxl">
           <div className="row  gx-4 gy-5 footer__mid-links_container">
             <div className="col-6 col-md-5 col-lg ">
               <h2 className='text-capitalize text-light fs-lighter'>
                 contact Us
               </h2>
-              <ul class="m-0 p-0 d-flex flex-column gap-2" style={{wordBreak:"break-all"}}>
+              <ul className="m-0 p-0 d-flex flex-column gap-2" style={{wordBreak:"break-all"}}>
                 <li className='list-unstyled m-0 p-0'>
                   <a href="" className='text-decoration-none
                   text-light'> Demo Store</a>
@@ -129,7 +130,7 @@ const Footer = () => {
               <h2 className='text-capitalize text-light fs-lighter'>
                 Information
               </h2>
-              <ul class="m-0 p-0 d-flex flex-column gap-2">
+              <ul className="m-0 p-0 d-flex flex-column gap-2">
                 <li className='list-unstyled m-0 p-0'>
                   <a href="" className='text-decoration-none
                   text-light'>Privacy policy</a>
@@ -155,7 +156,7 @@ const Footer = () => {
               <h2 className='text-capitalize text-light fs-lighter'>
                 Account
               </h2>
-              <ul class="m-0 p-0 d-flex flex-column gap-2">
+              <ul className="m-0 p-0 d-flex flex-column gap-2">
                 <li className='list-unstyled m-0 p-0'>
                   <a href="" className='text-decoration-none
                   text-light'> Search</a>
@@ -182,7 +183,7 @@ const Footer = () => {
               <h2 className='text-capitalize text-light fs-lighter'>
                 Quick links
               </h2>
-              <ul class="m-0 p-0 d-flex flex-column gap-2">
+              <ul className="m-0 p-0 d-flex flex-column gap-2">
                 <li className='list-unstyled m-0 p-0'>
                   <a href="" className='text-decoration-none
                   text-light'> Acessories </a>
@@ -209,7 +210,7 @@ const Footer = () => {
               <h2 className='text-center text-md-left text-capitalize text-light fs-lighter'>
                 Our App
               </h2>
-              <ul class="m-0 p-0 d-flex flex-column gap-2">
+              <ul className="m-0 p-0 d-flex flex-column gap-2">
                 <li className='list-unstyled m-0 p-0'>
                   <a href="" className='text-decoration-none
                   text-light'> Download our app and ger 15% of your first deposit</a>

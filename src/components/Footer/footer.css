@@ -1,9 +1,17 @@
 .footer__container {
     background: var(--color-232f3e);
+    padding-bottom: 5rem;
 }
 
 .footer__container>*:last-child h3 {
     font-size: 1.2rem;
+}
+
+.footer__container input[type=email]::placeholder {
+    margin-left: 1rem;
+    text-align: center;
+    font-weight: 600;
+    color: var(--shining-black);
 }
 
 .footer__container>*:not(:first-child) {

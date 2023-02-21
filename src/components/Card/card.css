@@ -1,0 +1,77 @@
+.home__cart-righsidebar {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.7);
+    /* width: 100%; */
+    height: 100svh;
+    overflow: hidden;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out, visibility 0.3s ease;
+}
+
+.home__cart-righside_content {
+    width: min(400px, calc(100% - 50px));
+    background: white;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    transition: right 0.3s ease 0.2s;
+}
+
+.home__cart-righsidebar.active {
+    visibility: visible;
+    pointer-events: all;
+    opacity: 1;
+}
+
+.home__cart-righside_content.active {
+    right: 0;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.2rem;
+}
+
+.card-grid h1:not(.price) {
+    font-size: 1.2rem;
+}
+
+.card-grid h1.price {
+    line-height: 30px;
+    margin-top: 1rem;
+}
+
+.card-grid p {
+    line-height: 15px;
+}
+
+.card-grid span {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.card-grid span.text {
+    font-size: 1.5rem;
+    color: var(--dark-color);
+}
+
+.paynow h2 {
+    font-size: 1.3rem;
+    line-height: 10px;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+}
+
+.paynow h1 {
+    font-size: 1.6rem;
+    letter-spacing: 0.12rem;
+    font-weight: 900;
+    line-height: 40px;
+}

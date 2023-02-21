@@ -1,13 +1,81 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Prata:wght@400&family=Monstserrat:wght@400;500;600");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
+:root {
+    --primary-color: #2bcbba;
+    --grey-color: #687080;
+    --red-color: #ff4757;
+    --white-color: #fff;
+    --flashwhite-color: #fffeee;
+    --dark-color: #212121;
+    --ff-shadow: "Shadows Into Light", cursive;
+    --primary-font: "Monstserrat", sans-serif;
+    --second-font: "Prata", serif;
+    --ff-manrope: "Manrope", sans-serif;
+    --fst14: 14px;
+    --fw600: 600;
+    --transition-color: color 0.3s;
+    --transition-background: background-color 0.3s;
+    --transition-border: border 0.3s;
+    --transition-transform: transform 0.3s;
+    --shadow: 0 10px 20px 0 rgba(0 0 0 /20%);
+    --fade: fade-bottom 0.3s cubic-bezier(0.39, 0.575, 0.0565, 1) both;
+    --color-secondary: hsl(252, 100%, 90%);
+    --color-primary: hsl(252, 75%, 60%);
+    --shining-black: rgb(7, 7, 12);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.title {
+    font-size: clamp(30px, -0.0875em + 8.33vw, var(--fs-max, 40px));
+}
+
+.bg__primary {
+    background: rgb(7, 7, 12);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--dark-color);
+    background-color: var(--white-color);
+    overflow: hidden;
+}
+
+.ff-secondfont {
+    font-family: var(--second-font);
+}
+
+.ff-shadow {
+    font-family: var(--ff-shadow);
+}
+
+.ff-monserat {
+    font-family: var(--primary-font)
+}
+
+.ff-manrope {
+    font-family: var(--ff-manrope)
 }

@@ -1,6 +1,8 @@
 
 import './ourblog.css'
 import ProductCard from '../../components/Product/Product'
+import {AiOutlineMenu} from 'react-icons/ai'
+
 import { tv, camera, speaker, laptop, watch, homeapp } from './image'
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
@@ -11,7 +13,7 @@ const OurBlog = () => {
     const [section, setSection] = useState(0)
     const [toggle, setToggle] = useState(false)
     const BlogData = [...ProductData, ...ProductDataFashion]
-    .sort(()=>Math.random()-0.5)
+    // .sort(()=>Math.random()-0.5)
     setTimeout(() => {
         setLoading(false)
     }, 2000);
@@ -20,21 +22,20 @@ const OurBlog = () => {
         setSection(n)
     }
     return (
-        <div className='ourblog__container bg-light overflow'>
+        <div className='ourblog__container border-0 bg-light overflow'>
             {loading && <Loader />}
 
             <h2 className="text-center bg-white py-3 mb-5 fw-normal">Home/ our store</h2>
             {!loading && <div className="container--xxl">
                 <div className="row px-md-5 position-relative">
-                    <div className="btn btn-outline-warning  d-md-none 
-                    mx-4 mb-3 ms-auto border border-3 fw-bolder border-warning" style={{
+                    <div className="btn btn-outline-dark  d-md-none 
+                    mx-4 mb-3 ms-auto bor border-3 fw-bolder p-2" style={{
                         width: "fit-content",
                         transition: "opacity 0.3s ease",
                         opacity: !toggle ? "1" : "0",
-                        transform: "rotate(90deg)"
                     }}
                         onClick={e => setToggle(true)}
-                    >|||</div>
+                    ><AiOutlineMenu  size={20}/> </div>
 
                     <div className={`col-md-3 ourblog__rightside-main_container 
                     ${!toggle ? "d-none" : "d-block"}  d-md-block border `} style={{
@@ -132,7 +133,7 @@ const OurBlog = () => {
                             <div className="ourblog__search-container py-3 border rounded-3  border-2">
                             </div>
 
-                            <div className="row gx-3 gy-4 my-1 mb-4">
+                            <div className="row gx-1 gx-sm-2 gy-4 my-1 mb-4">
                                 {
                                   section==0&& BlogData.map((item, index) => {
                                         return (

@@ -38,7 +38,8 @@ const News = () => {
         <div className="home__news-container bg-light py-4 px-2 px-md-3 px-lg-4">
             <div className="container-xxl">
                 <div className="row gy-4 gx-1">
-                     {CardData.map(({text1,text2,imgUrl,heading},index)=><NewsCard index={index} text1={text1} text2={text2} heading={heading} imgUrl={imgUrl}/>)}
+                     {CardData.map(({text1,text2,imgUrl,heading},index)=><NewsCard key={index} index={index} text1={text1} 
+                     text2={text2} heading={heading} imgUrl={imgUrl}/>)}
                 </div>
             </div>
         </div>

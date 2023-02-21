@@ -1,46 +1,135 @@
 
 import { NavLink, Link } from 'react-router-dom'
 import { BsSearch } from 'react-icons/bs'
+import { AiOutlineClose } from 'react-icons/ai'
 import { compare, wishlist, user, cart, menu } from './image'
 import './header.css'
 import { BsBag } from 'react-icons/bs'
-
+import { AiOutlineMenu } from 'react-icons/ai'
+import { RiCloseFill } from 'react-icons/ri'
 import { useState } from 'react'
-
-const Header = () => {
+import _person from './../../Constants/clothimages/product_02.jpg'
+import Card from '../Card/Card'
+const Header = ({ toggleSideBar, setToggleSideBar }) => {
   const [toggle, setToggle] = useState(false)
-  const _links_arrays = [
-    {
-      imgSrc: compare,
-      p1: "Compare",
-      p2: "Product"
-    },
-    {
-      imgSrc: wishlist,
-      p1: "Favorite",
-      p2: "Wishlist"
-    },
-    {
-      imgSrc: user,
-      p1: "Login",
-      p2: "My Account"
-    },
-    {
-      imgSrc: cart,
-      p1: <button className='btn 
-      border text-black bg-white badge p-0 ms-1 mb-1 px-2 fw-bold text-muted rounded-pill
-      ' style={{ fontSize: "0.5rem" }}>0</button>,
-      p2: "$0.00"
-    },
 
 
-  ]
 
 
 
 
   return (
     <>
+
+      <div className={`home__cart-righsidebar ${toggleSideBar && "active"}`}>
+
+        {/* <div className="container-xxl h-100 "> */}
+
+          <div className={`home__cart-righside_content  ${toggleSideBar && "active"}`}>
+            <div className="position-absolute  paynow
+          
+          rounded-3
+          containers  bg-white w-100 pb-1 pt-4" style={{
+
+                top: "auto",
+                zIndex: 10,
+                marginTop:"auto",
+                bottom: "0"
+
+
+              }}>
+              <div className="d-flex  justify-content-between px-4">
+
+                <div>
+
+                  <h2 className="text-muted ff-manrope">
+                    Total
+                  </h2>
+                  <h1 className='ff-manrope'>$267,23</h1>
+                </div>
+                <div>
+                  <div className="btn btn-danger align-items-center d-flex text-capitalize bg-opacity-25 text-white rounded-pill px-4" style={{
+                  height:"60px",
+                  fontSize:"1.4rem"
+                  }} >
+                    pay now
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div className="close-btn
+       ff-shadow d-flex align-items-center
+       justify-content-center   text-light 
+       absolute start-0 top-0"
+              style={{
+                width: "40px",
+                height: "40px",
+                marginLeft: "-45px"
+              }}
+             onClick={(e)=>setToggleSideBar(function(){
+             return false})}>
+              <RiCloseFill size={30}
+                className="text-danger fw-bold" />
+
+
+
+            </div>
+            <div className="container position-relative" >
+
+
+
+
+              <div className="row  align-items-center" style={{
+              marginTop:"-20px"
+              }}>
+                <div className="col p-0">
+                  <h3 className='text-center'>Card</h3>
+                </div>
+                <div className="col-2 p-0  d-flex justify-content-end">
+                  <img src={_person} alt="user" className='
+              text-dark bg-dark img-fluid
+              border-4 border-danger me-2 rounded-circle' style={{
+                      width: "40px",
+                      height: "40px"
+                    }} />
+                  {/* end header */}
+
+
+                </div>
+              </div>
+
+              <div className="d-flex flex-column gap-y-5 mt-2 border border-danger overflow-auto" style={{
+                height: "100vh"
+              }}>
+                <div className="bg-white  rounded-3">
+
+                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
+                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
+                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
+                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
+                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
+                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
+                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
+                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
+                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
+                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
+                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
+                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
+                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
+                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
+                
+           
+
+                </div>
+              </div>
+            {/* </div> */}
+          </div>
+
+
+        </div>
+      </div>
+
       <div className="header__top-strip py-1 pb-0
       shadow   bg-dark  position-relative" >
         <div className={`header__sidebar-container d-md-none
@@ -52,12 +141,18 @@ const Header = () => {
               return false
             })}>
           <ul className={`header__sidebbar-content position-relative bg-dark bg-opacity-100 ${toggle && "header__sidebar-left"}`}>
-            <li><Link to={"/"}>home</Link></li>
-            <li><Link to={"/store"}>House</Link></li>
-            <li><Link to={"/"}>home</Link></li>
-            <li><Link to={"/"}>home</Link></li>
-            <li><Link to={"/"}>home</Link></li>
-            <li><Link to={"/"}>home</Link></li>
+            <span className="span-button-close position-absolute top-0 end-0 text-light fw-lighter  " style={{
+              marginRight: "-40px",
+              marginTop: "5px"
+
+            }}><AiOutlineClose size={24} /></span>
+
+            <li><Link className='text-decoration-none text-light fw-lighter' to={"/"}>home</Link></li>
+            <li><Link className='text-decoration-none text-light fw-lighter' to={"/store"}>House</Link></li>
+            <li><Link className='text-decoration-none text-light fw-lighter' to={"/"}>home</Link></li>
+            <li><Link className='text-decoration-none text-light fw-lighter' to={"/"}>home</Link></li>
+            <li><Link className='text-decoration-none text-light fw-lighter' to={"/"}>home</Link></li>
+            <li><Link className='text-decoration-none text-light fw-lighter' to={"/"}>home</Link></li>
             <div className="position-absolute  bottom-0 bg-dark  w-100 start-0 bg-opacity-25 d-flex align-items-center pb-3 pt-1" >
               <img src={menu} alt="user" className=' ms-3 mt-1' style={{
                 width: "40px",
@@ -85,7 +180,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <header className="header__upper bg-dark text-white
+      <header className="header__upper bg__primary text-white
       py-2 px-0 px-sm-3 px-md-4 px-lg-5 ">
 
         <div className="container-xxl">
@@ -104,10 +199,11 @@ const Header = () => {
                 <div className="ms-2 position-relative" onClick={function () {
                   return (window.navigator.vibrate([50]))
                 }}>
-                <div className="position-absolute  " style={{
-                top:"-6px",right:"-5px"}}>
-                <div className="btn btn-danger rounded-circle p-0 d-flex align-items-center justify-content-center" style={{fontSize:"0.5rem",width:"15px",height:"15px"}}>0</div>
-                </div>
+                  <div className="position-absolute  " style={{
+                    top: "-6px", right: "-5px"
+                  }}>
+                    <div className="btn btn-danger rounded-circle p-0 d-flex align-items-center justify-content-center" style={{ fontSize: "0.5rem", width: "15px", height: "15px" }}>0</div>
+                  </div>
                   <NavLink to="/cart">
                     <BsBag color='white' />
                   </NavLink>
@@ -116,7 +212,7 @@ const Header = () => {
 
               </div>
 
-              <h3><span className="d-sm-none me-4 btn btn-outline-warning"
+              <h3><span className="d-sm-none me-4 btn btn-outline-light"
 
 
                 onClick={e => {
@@ -124,10 +220,7 @@ const Header = () => {
                     return (
                       true)
                   })
-                }} style={{
-
-                  transform: "rotate(90deg"
-                }}>|||</span><Link to={"/"} className="text-decoration-none text-white  fw-bolder  ">Sellam<span className='text-success'>2</span><span className='text-danger'>3</span><span className='text-warning'>7</span></Link></h3>
+                }}><AiOutlineMenu size={20} /></span><Link to={"/"} className="text-decoration-none text-white  fw-bolder  ">Sellam<span className='text-success'>2</span><span className='text-danger'>3</span><span className='text-warning'>7</span></Link></h3>
             </div>
             <div className="col-md-8 col-lg 
             d-flex align-items-center border-0 ">
@@ -179,18 +272,24 @@ const Header = () => {
                     <p className='m-0 p-0 ' style={{ fontSize: "0.8rem" }}>My Account</p>
                   </div>
                 </Link></li>
-                <li className='list-unstyled '><Link to={"/"}
-                  className="text-decoration-none  text-white d-flex align-items-center gap-1 lh-1 ">
-                  <div className="header__up-img_container">
-                    <img src={cart} alt="compare" className='img-fluid' /></div>
+                <li className='list-unstyled '>
+                  <div
+                    className="text-decoration-none  text-white d-flex align-items-center gap-1 lh-1 " onClick={e => [e.stopPropagation(),
+                    setToggleSideBar(function () {
+                      return true
+                    })]
+                    }>
+                    <div className="header__up-img_container">
+                      <img src={cart} alt="compare" className='img-fluid' /></div>
 
-                  <div className="">
-                    <p className='m-0 p-0 pb-1 ' style={{ fontSize: "0.8rem" }}> <button className='btn 
+                    <div className="--"
+                    >
+                      <p className='m-0 p-0 pb-1 ' style={{ fontSize: "0.8rem" }}> <button className='btn 
       border text-black bg-white badge p-0 ms-1 mb-1 px-2 fw-bold text-muted rounded-pill
       ' style={{ fontSize: "0.5rem" }}>0</button></p>
-                    <p className='m-0 p-0 ' style={{ fontSize: "0.8rem" }}>$0.00</p>
-                  </div>
-                </Link></li>
+                      <p className='m-0 p-0 ' style={{ fontSize: "0.8rem" }}>$0.00</p>
+                    </div>
+                  </div></li>
 
 
 
@@ -203,7 +302,7 @@ const Header = () => {
         </div>
       </header>
       <div className="header__bottom-strip
-      py-1 bg-dark bg-opacity-75    px-0  shadow  px-sm-3 px-md-4 px-lg-5  pb-2">
+      py-1 bg__primary bg-opacity-75    px-0  shadow  px-sm-3 px-md-4 px-lg-5  pb-2">
         <div className="container-xxl ">
           <div className="d-flex  gap-2 flex-column flex-md-row">
 
@@ -221,17 +320,17 @@ const Header = () => {
                 <span className='me-5 d-inline-block ms-2'>Show categories</span>
 
               </button>
-              <ul className='dropdown-menu w-100'
+              <ul className='dropdown-menu w-100 bg-light rounded text-dark shadow border border-3'
                 aria-labelledby='dropdownMenuButton1'
               >
                 <li>
-                  <Link to="/" className="dropdown-item text-white">Action</Link>
+                  <Link to="/" className="dropdown-item text-dark">Action</Link>
                 </li>
                 <li>
-                  <Link to="/" className="dropdown-item text-white">Action</Link>
+                  <Link to="/" className="dropdown-item text-dark">Action</Link>
                 </li>
                 <li>
-                  <Link to="/" className="dropdown-item text-white">Action</Link>
+                  <Link to="/" className="dropdown-item text-dark">Action</Link>
                 </li>
               </ul>
             </div>
@@ -239,10 +338,10 @@ const Header = () => {
             <div className="d-flex gap-2 
             text-white align-items-center px-4 justify-content-between justify-content-md-center dropdown-links 
             ">
-              <p className="m-0 "><NavLink to={"/"}>HOME</NavLink></p>
-              <p className="m-0"><NavLink to="/our-store">OUR STORE</NavLink></p>
-              <p className="m-0">BLOGS</p>
-              <p className="m-0">CONTACT</p>
+              <p className="m-0 "><NavLink color='white' className={`text-white text-decoration-none`} to={"/"}>HOME</NavLink></p>
+              <p className="m-0"><NavLink color='white' className={`text-white text-decoration-none`} to="/our-store">OUR STORE</NavLink></p>
+              <p className="m-0 "><NavLink color='white' className={`text-white text-decoration-none text-capitalized`} to={"/"}>blog</NavLink></p>
+              <p className="m-0"><NavLink color='white' className={`text-white text-decoration-none text-capitalized`} to="/our-store">contact</NavLink></p>
             </div>
 
           </div>

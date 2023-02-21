@@ -60,7 +60,9 @@
     padding-top: 2rem;
     width: fit-content;
     height: 100%;
-    width: 300px;
+    /* max-width: calc(100% - 40px); */
+    /* width: 400px; */
+    width: min(calc(100% - 40px), 320px);
     transition: left 0.4s ease;
     left: -100%;
 }
@@ -84,6 +86,12 @@
 .header__sidebbar-content li:hover {
     color: orange;
 }
+
+
+/* home sie bar */
+
+
+/* end here */
 
 @media screen and (max-width:578px) {
     .header__bottom-strip .dropdown button,
