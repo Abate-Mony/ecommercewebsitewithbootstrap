@@ -5,15 +5,15 @@
     content: none !important;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
+.home__cta-wrapper .swiper-button-next,
+.home__cta-wrapper .swiper-button-prev {
     height: 40px !important;
     width: 40px !important;
     border-radius: 50%;
     background: rgba(0, 0, 0, 0.1);
 }
 
-.swiper-button-disabled {
+.home__cta-wrapper .swiper-button-disabled {
     display: none !important;
 }
 

@@ -1,52 +1,12 @@
 import './footer.css'
 
 import { BsLinkedin, BsGithub, BsYoutube, BsInstagram } from 'react-icons/bs'
-import {NavLink} from "react-router-dom"
-import{AiOutlineHome,AiOutlineMenu,AiOutlineStar} from 'react-icons/ai'
-import{BsBag} from 'react-icons/bs'
 import newsletter from '../../assest/images/newsletter.png'
 const Footer = ({setToggleSideBar}) => {
 
-  const vibrateConst=20
   return (
     <div className='footer__container bg__primary'>
-    <div className="position-fixed bottom-0 left-0 right-0 w-100 px-2 py-3 bg-dark d-md-none bg-opacity-75 " style={{zIndex:120}}>
-    <div className="d-flex align-items-center justify-content-between px-4">
-    
-    <NavLink to={"/"} onClick={function(){
-                return (window.navigator.vibrate([vibrateConst]))
-                }}>
-    <AiOutlineHome color='white' size={20} onClick={function(){
-                return (window.navigator.vibrate([vibrateConst]))
-                }}/>
-    </NavLink>
-    <NavLink to={"/"} onClick={function(){
-                return (window.navigator.vibrate([vibrateConst]))
-                }}>
-    <AiOutlineMenu color='white' size={20} onClick={function(){
-                return (window.navigator.vibrate([vibrateConst]))
-                }}/>
-    </NavLink>
   
-    <NavLink to={"/favorites"} onClick={function(){
-                return (window.navigator.vibrate([vibrateConst]))
-                }}>
-    <AiOutlineStar color='white' size={20}/>
-    
-    </NavLink>
-    <div  className="position-relative" onClick={()=>setToggleSideBar(function(){
-    return true
-    })}>
-    
-    <BsBag color='white' />
-                <div className="position-absolute  " style={{
-                top:"-6px",right:"-5px"}}>
-                <div className="btn btn-danger rounded-circle p-0 d-flex align-items-center justify-content-center" style={{fontSize:"0.5rem",width:"15px",height:"15px"}}>0</div>
-                </div>
-    </div>
-    </div>
-    
-    </div>
     
       <footer className='py-3 bg__primary'>
         <div className="container-xxl">

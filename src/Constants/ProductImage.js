@@ -32,10 +32,13 @@ import {
     speaker1,
     speaker2,
     speaker3,
+    speaker4,
 
     watch_1,
     watch_2,
     watch_3,
+    watch_4,
+    watch_5,
     product_01,
     product_02,
     product_03,
@@ -80,51 +83,62 @@ import {
 
 
 const ProductDataElectronic = [{
-        productImage1: headphones_a_1,
-        productImage2: headphones_a_2,
-        productImage3: headphones_a_3,
-        productImage4: headphones_a_4,
-        productName: "Headphone",
-        productDescript: "Find the best HeadPhones here ",
+
+        productImage: [
+            headphones_a_1,
+            headphones_a_2,
+            headphones_a_3,
+            headphones_a_4,
+        ],
+        productName: "HeadPhones 2.0",
+        productDescript: "Scale with the best sound width ultra band width ",
         productPrice: 1223,
         productCancel: 222
 
     },
     {
-        productImage1: headphones_b_1,
-        productImage2: headphones_b_2,
-        productImage3: headphones_b_3,
-        productImage4: headphones_b_4,
-        productName: "Headphone 1",
-        productDescript: "Find the best HeadPhones here ",
+        productImage: [
+            headphones_b_1,
+            headphones_b_2,
+            headphones_b_3,
+            headphones_b_4,
+        ],
+        productName: "Model S25",
+        productDescript: "Wiresless version of version 2.03 with transmittin speed rated at 2.0 to 2.22 " + < br / > +"charging speed rated at 2/hr",
         productPrice: 1223,
         productCancel: 222
 
     }, {
-        productImage1: headphones_c_1,
-        productImage2: headphones_c_2,
-        productImage3: headphones_c_3,
-        productImage4: headphones_c_4,
-        productName: "Headphone",
-        productDescript: "Find the best HeadPhones here ",
+        productImage: [
+            headphones_c_1,
+            headphones_c_2,
+            headphones_c_3,
+            headphones_c_4,
+        ],
+        productName: "S33 UltraSlim earphones",
+        productDescript: "Small decimal scale product with all you need for the best sound " + < br / > +"Wiresless version of version 2.03 with transmittin speed rated at 2.0 to 2.22 ",
         productPrice: 1223,
         productCancel: 222
 
     }, {
-        productImage1: earphones_a_1,
-        productImage2: earphones_a_2,
-        productImage3: earphones_a_3,
-        productImage4: earphones_a_4,
+        productImage: [
+            earphones_a_1,
+            earphones_a_2,
+            earphones_a_3,
+            earphones_a_4,
+        ],
         productName: "Earphones",
         productDescript: "Find the best Earphoness here ",
         productPrice: 1223,
         productCancel: 222
 
     }, {
-        productImage1: earphones_b_1,
-        productImage2: earphones_b_2,
-        productImage3: earphones_b_3,
-        productImage4: earphones_b_4,
+        productImage: [
+            earphones_b_1,
+            earphones_b_2,
+            earphones_b_3,
+            earphones_b_4,
+        ],
         productName: "Earphones",
         productDescript: "Find the best Earphoness here ",
         productPrice: 1223,
@@ -132,10 +146,12 @@ const ProductDataElectronic = [{
 
     },
     {
-        productImage1: earphones_c_1,
-        productImage2: earphones_c_2,
-        productImage3: earphones_c_3,
-        productImage4: earphones_c_4,
+        productImage: [
+            earphones_c_1,
+            earphones_c_2,
+            earphones_c_3,
+            earphones_c_4,
+        ],
         productName: "Earphones",
         productDescript: "Find the best Earphoness here ",
         productPrice: 1223,
@@ -143,9 +159,12 @@ const ProductDataElectronic = [{
 
     },
     {
-        productImage1: speaker1,
-        productImage2: speaker2,
-        productImage3: speaker3,
+        productImage: [
+            speaker1,
+            speaker2,
+            speaker3,
+            speaker4
+        ],
         productName: "Speaker",
         productDescript: "Find the best Speakerss here ",
         productPrice: 1223,
@@ -153,9 +172,14 @@ const ProductDataElectronic = [{
 
     },
     {
-        productImage1: watch_1,
-        productImage2: watch_2,
-        productImage3: watch_3,
+
+        productImage: [
+            watch_1,
+            watch_2,
+            watch_3,
+            watch_4,
+            watch_5,
+        ],
         productName: "Speaker",
         productDescript: "Find the best Speakerss here ",
         productPrice: 1223,

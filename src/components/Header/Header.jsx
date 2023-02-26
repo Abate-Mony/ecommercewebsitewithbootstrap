@@ -1,171 +1,114 @@
 
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link, useNavigate } from 'react-router-dom'
 import { BsSearch } from 'react-icons/bs'
 import { AiOutlineClose } from 'react-icons/ai'
 import { compare, wishlist, user, cart, menu } from './image'
 import './header.css'
 import { BsBag } from 'react-icons/bs'
-import { AiOutlineMenu } from 'react-icons/ai'
 import { RiCloseFill } from 'react-icons/ri'
-import { useState } from 'react'
 import _person from './../../Constants/clothimages/product_02.jpg'
 import Card from '../Card/Card'
+import { ProductData } from '../../Constants/ProductImage'
 const Header = ({ toggleSideBar, setToggleSideBar }) => {
-  const [toggle, setToggle] = useState(false)
-
-
-
-
-
-
   return (
     <>
-
       <div className={`home__cart-righsidebar ${toggleSideBar && "active"}`}>
 
-        {/* <div className="container-xxl h-100 "> */}
-
-          <div className={`home__cart-righside_content  ${toggleSideBar && "active"}`}>
-            <div className="position-absolute  paynow
+        <div className={`home__cart-righside_content  ${toggleSideBar && "active"}`}>
+          <div className="position-absolute  paynow
           
           rounded-3
           containers  bg-white w-100 pb-1 pt-4" style={{
 
-                top: "auto",
-                zIndex: 10,
-                marginTop:"auto",
-                bottom: "0"
+              top: "auto",
+              zIndex: 10,
+              marginTop: "auto",
+              bottom: "0"
 
 
-              }}>
-              <div className="d-flex  justify-content-between px-4">
+            }}>
+            <div className="d-flex  justify-content-between px-4">
 
-                <div>
+              <div>
 
-                  <h2 className="text-muted ff-manrope">
-                    Total
-                  </h2>
-                  <h1 className='ff-manrope'>$267,23</h1>
-                </div>
-                <div>
-                  <div className="btn btn-danger align-items-center d-flex text-capitalize bg-opacity-25 text-white rounded-pill px-4" style={{
-                  height:"60px",
-                  fontSize:"1.4rem"
-                  }} >
-                    pay now
-                  </div>
+                <h2 className="text-muted ff-manrope">
+                  Total
+                </h2>
+                <h1 className='ff-manrope'>$267,23</h1>
+              </div>
+              <div>
+                <div className="btn btn-danger align-items-center d-flex text-capitalize bg-opacity-25 text-white rounded-pill px-4" style={{
+                  height: "60px",
+                  fontSize: "1.4rem"
+                }} >
+                  pay now
                 </div>
               </div>
-
             </div>
-            <div className="close-btn
+
+          </div>
+          <div className="close-btn
        ff-shadow d-flex align-items-center
        justify-content-center   text-light 
        absolute start-0 top-0"
-              style={{
-                width: "40px",
-                height: "40px",
-                marginLeft: "-45px"
-              }}
-             onClick={(e)=>setToggleSideBar(function(){
-             return false})}>
-              <RiCloseFill size={30}
-                className="text-danger fw-bold" />
+            style={{
+              width: "40px",
+              height: "40px",
+              marginLeft: "-45px"
+            }}
+            onClick={(e) => setToggleSideBar(function () {
+              return false
+            })}>
+            <RiCloseFill size={30}
+              className="text-danger fw-bold" />
 
 
 
-            </div>
-            <div className="container position-relative" >
+          </div>
+          <div className="container position-relative" >
 
 
 
 
-              <div className="row  align-items-center" style={{
-              marginTop:"-20px"
-              }}>
-                <div className="col p-0">
-                  <h3 className='text-center'>Card</h3>
-                </div>
-                <div className="col-2 p-0  d-flex justify-content-end">
-                  <img src={_person} alt="user" className='
+            <div className="row  align-items-center" style={{
+              marginTop: "-20px"
+            }}>
+              <div className="col p-0">
+                <h3 className='text-center'>Card</h3>
+              </div>
+              <div className="col-2 p-0  d-flex justify-content-end">
+                <img src={_person} alt="user" className='
               text-dark bg-dark img-fluid
               border-4 border-danger me-2 rounded-circle' style={{
-                      width: "40px",
-                      height: "40px"
-                    }} />
-                  {/* end header */}
+                    width: "40px",
+                    height: "40px"
+                  }} />
+                {/* end header */}
 
 
-                </div>
               </div>
+            </div>
 
-              <div className="d-flex flex-column gap-y-5 mt-2 border border-danger overflow-auto" style={{
-                height: "100vh"
-              }}>
-                <div className="bg-white  rounded-3">
+            <div className="d-flex flex-column gap-y-5 mt-2 overflow-auto" style={{
+              height: "100vh"
+            }}>
+              <div className="bg-white  rounded-3">
+                {
+                  ProductData.map(({ productImage, productPrice, productName, productDescript }, index) => <Card
+                    key={index} price={productPrice} closeSidebar={setToggleSideBar} productId={index}
+                    description={productDescript} item_name={productName} imgUrl={productImage[0]} />)
+                }
 
-                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
-                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
-                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
-                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
-                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
-                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
-                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
-                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
-                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
-                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
-                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
-                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
-                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
-                <Card price={1234} item_name={"Casual T-shirt"} description={"cloths for marketers !"}/>
-                
-           
-
-                </div>
               </div>
+            </div>
             {/* </div> */}
           </div>
 
 
         </div>
       </div>
-
       <div className="header__top-strip py-1 pb-0
-      shadow   bg-dark  position-relative" >
-        <div className={`header__sidebar-container d-md-none
-      position-fixed top-0 left-0 bg-dark h-100 w-100 bg-opacity-75 ${toggle && "header__sidebar-block"} `} style={
-            {
-              zIndex: 222
-            }} onClick={e => setToggle(function () {
-
-              return false
-            })}>
-          <ul className={`header__sidebbar-content position-relative bg-dark bg-opacity-100 ${toggle && "header__sidebar-left"}`}>
-            <span className="span-button-close position-absolute top-0 end-0 text-light fw-lighter  " style={{
-              marginRight: "-40px",
-              marginTop: "5px"
-
-            }}><AiOutlineClose size={24} /></span>
-
-            <li><Link className='text-decoration-none text-light fw-lighter' to={"/"}>home</Link></li>
-            <li><Link className='text-decoration-none text-light fw-lighter' to={"/store"}>House</Link></li>
-            <li><Link className='text-decoration-none text-light fw-lighter' to={"/"}>home</Link></li>
-            <li><Link className='text-decoration-none text-light fw-lighter' to={"/"}>home</Link></li>
-            <li><Link className='text-decoration-none text-light fw-lighter' to={"/"}>home</Link></li>
-            <li><Link className='text-decoration-none text-light fw-lighter' to={"/"}>home</Link></li>
-            <div className="position-absolute  bottom-0 bg-dark  w-100 start-0 bg-opacity-25 d-flex align-items-center pb-3 pt-1" >
-              <img src={menu} alt="user" className=' ms-3 mt-1' style={{
-                width: "40px",
-                height: "40px"
-              }} />
-              <img src={user} alt="user" className='ms-auto  me-3 mt-1' style={{
-                width: "40px",
-                height: "40px"
-              }} />
-            </div>
-          </ul>
-
-        </div>
+      shadow   bg-dark  position-relative">
         <div className="container-xxl d-none d-sm-block overflow-hidden">
           <div className="row align-items-center fs-6">
             <div className="col-6">
@@ -212,15 +155,8 @@ const Header = ({ toggleSideBar, setToggleSideBar }) => {
 
               </div>
 
-              <h3><span className="d-sm-none me-4 btn btn-outline-light"
-
-
-                onClick={e => {
-                  setToggle(function () {
-                    return (
-                      true)
-                  })
-                }}><AiOutlineMenu size={20} /></span><Link to={"/"} className="text-decoration-none text-white  fw-bolder  ">Sellam<span className='text-success'>2</span><span className='text-danger'>3</span><span className='text-warning'>7</span></Link></h3>
+              <h3>
+                <Link to={"/"} className="text-decoration-none text-white  fw-bolder fs-1 ">Sellam<span className='text-success'>2</span><span className='text-danger'>3</span><span className='text-warning'>7</span></Link></h3>
             </div>
             <div className="col-md-8 col-lg 
             d-flex align-items-center border-0 ">
@@ -262,16 +198,18 @@ const Header = ({ toggleSideBar, setToggleSideBar }) => {
                     <p className='m-0 p-0 ' style={{ fontSize: "0.8rem" }}>Wishlist</p>
                   </div>
                 </Link></li>
-                <li className='list-unstyled d-none d-sm-block'><Link to={"/"}
-                  className="text-decoration-none  text-white d-flex align-items-center gap-1 lh-1 ">
-                  <div className="header__up-img_container">
-                    <img src={user} alt="compare" className='img-fluid' /></div>
+                <li className='list-unstyled d-none d-sm-block'>
 
-                  <div className="">
-                    <p className='m-0 p-0 pb-1 ' style={{ fontSize: "0.8rem" }}>Login</p>
-                    <p className='m-0 p-0 ' style={{ fontSize: "0.8rem" }}>My Account</p>
-                  </div>
-                </Link></li>
+                  <Link to={"/user"}
+                    className="text-decoration-none  text-white d-flex align-items-center gap-1 lh-1 ">
+                    <div className="header__up-img_container">
+                      <img src={user} alt="compare" className='img-fluid' /></div>
+
+                    <div className="">
+                      <p className='m-0 p-0 pb-1 ' style={{ fontSize: "0.8rem" }}>Login</p>
+                      <p className='m-0 p-0 ' style={{ fontSize: "0.8rem" }}>My Account</p>
+                    </div>
+                  </Link></li>
                 <li className='list-unstyled '>
                   <div
                     className="text-decoration-none  text-white d-flex align-items-center gap-1 lh-1 " onClick={e => [e.stopPropagation(),
@@ -337,10 +275,11 @@ const Header = ({ toggleSideBar, setToggleSideBar }) => {
 
             <div className="d-flex gap-2 
             text-white align-items-center px-4 justify-content-between justify-content-md-center dropdown-links 
-            ">
+            "
+            >
               <p className="m-0 "><NavLink color='white' className={`text-white text-decoration-none`} to={"/"}>HOME</NavLink></p>
               <p className="m-0"><NavLink color='white' className={`text-white text-decoration-none`} to="/our-store">OUR STORE</NavLink></p>
-              <p className="m-0 "><NavLink color='white' className={`text-white text-decoration-none text-capitalized`} to={"/"}>blog</NavLink></p>
+              <p className="m-0 "><NavLink color='white' className={`text-white text-decoration-none text-capitalized`} to={"/blog"}>blog</NavLink></p>
               <p className="m-0"><NavLink color='white' className={`text-white text-decoration-none text-capitalized`} to="/our-store">contact</NavLink></p>
             </div>
 

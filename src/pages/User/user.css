@@ -1,0 +1,10 @@
+.login__register-container {
+    width: fit-content;
+    padding: 0 5rem;
+}
+
+@media screen and (min-width:992px) {
+    .login__register-container {
+        padding: 0 8rem;
+    }
+}

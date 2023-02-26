@@ -3,7 +3,8 @@ import { useNavigate as Goto} from 'react-router-dom'
 import ReactStars from 'react-rating-stars-component'
 
 import love from '../../assest/images/wish-black.svg'
-function renderCart({ brand, imgUrl, cancelPrice, price, imgOverlayUrl, deductPercent, heading, col_lg, col_md }, index) {
+function renderCart({ brand, imgUrl, cancelPrice, price,descriptions,
+imgOverlayUrl, deductPercent, productId, col_lg, col_md }, index) {
   if (!col_lg) {
     col_lg = 2
   }
@@ -13,8 +14,6 @@ function renderCart({ brand, imgUrl, cancelPrice, price, imgOverlayUrl, deductPe
   cancelPrice=200
   price=237
   deductPercent=44
-  const productId=Math.floor(Math.random()*10)
-// const nagvate=useNavigate()
 const startscount=Math.floor(Math.random()*6)
 const navigate = Goto()
 
@@ -31,7 +30,7 @@ const navigate = Goto()
     
       <div className='d-flex flex-column gap-0
         position-relative  home__collection-container 
-        overflow-hidden rounded-2  position-relative bg-white'>
+        overflow-hidden rounded-2  position-relative bg-white shadow'>
         <span className="position-absolute top-0 end-0 me-2 mt-2" style={{ zIndex: 3 }}>
           <img src={love} alt="love" style={{ width: "15px", height: "15px" }} />
         </span>
@@ -61,9 +60,13 @@ const navigate = Goto()
                 
             </div>
         </div>
-        <div className='px-1 px-sm-2 px-lg-3 text-center text-md-start home__collection-content pt-4'>
-            <h4 className='text-danger border-0 ff-manrope'>Headphones with charger</h4>
-            <p className=''>Lorem ipsum dolor sit amet consectetur iugg asgfiusg  guisf .</p>
+        <div className='px-1 px-sm-2 px-lg-3 text-center text-md-start home__collection-content pt-2'>
+            <h4 className='text-danger border-0 ff-manrope mb-0 clamp__height' style={{
+             "--ch":"1"
+            }}>{brand}</h4>
+            <p className='text-dark description mt-1 clamp__height' style={{
+            "--ch":"2"
+            }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi natus inventore eveniet tempora adipisci iure, rem </p>
             
             
         </div>

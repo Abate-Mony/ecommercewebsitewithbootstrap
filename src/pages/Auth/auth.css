@@ -1,0 +1,46 @@
+.auth__wrapper .button.active {
+    color: black;
+}
+
+.auth__wrapper .button {
+    color: grey;
+    font-weight: 600;
+    transition: color 0.4s ease;
+}
+
+.auth__wrapper .overlay {
+    position: fixed;
+    height: 100vh;
+    height: 100svh;
+    width: 100vw;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.auth__wrapper .country__container {
+    max-width: calc(100% - 60px);
+    max-width: calc(100vh - 60px);
+    width: 400px;
+    height: 600px;
+    background: white;
+    border-radius: 1rem;
+    scale: 0;
+    transition: scale 0.4s ease;
+}
+
+.auth__wrapper .overlay input:focus {
+    box-shadow: none;
+}
+
+.auth__wrapper .overlay.active {
+    visibility: visible;
+    pointer-events: all;
+}
+
+.auth__wrapper .country__container.active {
+    scale: 1;
+}

@@ -4,20 +4,27 @@ import _person from './../../Constants/clothimages/product_02.jpg'
 import {useState,useRef} from 'react'
 import { RiCloseFill } from 'react-icons/ri'
 import {AiOutlineClose} from 'react-icons/ai' 
-const Card = ({ price, item_name, description }) => {
+import { useNavigate } from 'react-router-dom'
+const Card = ({ price, item_name, description,imgUrl,productId ,closeSidebar}) => {
 const [counter,setCounter] =useState(1)
 const parent=useRef(null)
+const navigate=useNavigate()
   return (
   
 
     <div className="card-grid my-3 rounded-3 shadow p-2 align-items-center" ref={parent}>
       <div className="m-0">
-        <img src={_person} alt="user" className='
+        <img src={imgUrl} alt="user" className='
 text-dark bg-dark img-fluid
 border-4 border-danger me-2 rounded-3' style={{
             width: "90px",
             height: "100px"
-          }} />
+          }}  onClick={
+  
+            function (){
+            return [navigate(`/product/${productId}`),closeSidebar(false)]
+            }
+            }/>
 
       </div>
       <div className="d-flex flex-column justify-content-between">
@@ -28,9 +35,10 @@ border-4 border-danger me-2 rounded-3' style={{
               {description}
             </p>
           </div>
-          <div className="btn btn-danger"
+          <div className="bg-danger d-flex align-items-center justify-content-center rounded px-1"
             style={{
-              height: "fit-content"
+              height: "20px",
+              width: "20px",
             }} onClick={()=>parent.current.remove()}
           > <RiCloseFill size={20} color="white"/>  </div>
 
