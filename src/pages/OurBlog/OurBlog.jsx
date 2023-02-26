@@ -3,17 +3,41 @@ import './ourblog.css'
 import ProductCard from '../../components/Product/Product'
 import { AiOutlineMenu } from 'react-icons/ai'
 
-import { tv, camera, speaker, laptop, watch, homeapp } from './image'
-import { NavLink } from 'react-router-dom'
-import { useState } from 'react'
+import { NavLink, useSearchParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import Loader from '../../components/Loader/Loader'
-import { ProductData, ProductDataFashion } from '../../Constants/ProductImage'
+import { ProductData, } from '../../Constants/ProductImage'
 const OurBlog = () => {
+
+    const params = new URLSearchParams(window.location.search)
+
+    const search = params.get("search")
     const [loading, setLoading] = useState(true)
     const [section, setSection] = useState(0)
     const [toggle, setToggle] = useState(false)
-    const BlogData = [...ProductData, ...ProductDataFashion]
-    // .sort(()=>Math.random()-0.5)
+
+    const [product, setProduct] = useState([])
+
+
+
+
+    useEffect(() => {
+
+        setProduct([...ProductData])
+
+        if (search) {
+            // alert("search here : " + search)
+            window.history.replaceState({}, {}, window.location.pathname)
+            var temp = null
+            temp = ProductData.filter((item) => {
+                if (item.productName.includes(search)) return item
+            })
+            setProduct([...temp])
+
+        }
+
+
+    }, [])
     setTimeout(() => {
         setLoading(false)
     }, 2000);
@@ -21,6 +45,8 @@ const OurBlog = () => {
     const setSectionFunction = (n) => {
         setSection(n)
     }
+
+
     return (
         <div className='ourblog__container border-0 bg-light overflow'>
             {loading && <Loader />}
@@ -136,13 +162,17 @@ const OurBlog = () => {
                             <div className="row gx-1 gx-sm-2 gy-4 my-1 mb-4">
 
                                 {
-                                    ProductData.map((item, index) => {
+                                   product.length>0? product.map((item, index) => {
                                         return <ProductCard
                                             col_lg={3} imgUrl={item.productImage[0]}
                                             imgOverlayUrl={item.productImage[1]}
                                             descriptions={item.productDescript} productId={index} brand={item.productName} onClick={() => document.scrollTo(0)} />
 
-                                    })
+                                    }):"no search result woth your search value"
+                                    
+                                    
+                                    
+                                    
                                 }
 
                             </div>

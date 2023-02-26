@@ -9,7 +9,20 @@ import { RiCloseFill } from 'react-icons/ri'
 import _person from './../../Constants/clothimages/product_02.jpg'
 import Card from '../Card/Card'
 import { ProductData } from '../../Constants/ProductImage'
+import {useState,useEffect} from 'react'
+
+
+
 const Header = ({ toggleSideBar, setToggleSideBar }) => {
+const navigate=useNavigate()
+const [search,setSearch]=useState("")
+  const handleSearch = (e) => {
+  e.preventDefault()
+alert("search was called"+search)
+navigate("/our-store?name=paul&age=45&search="+search)
+
+  }
+
   return (
     <>
       <div className={`home__cart-righsidebar ${toggleSideBar && "active"}`}>
@@ -163,13 +176,17 @@ const Header = ({ toggleSideBar, setToggleSideBar }) => {
               <div className="input-group ">
                 <input type="text"
                   className='form-control ps-3 '
-                  placeholder='Search product here .. '
-                  aria-controls='Search product here ..'
-                  aria-describedby='basic-addon2'
-
+                  placeholder='Search product here .. ' value={search}
+                  // aria-controls='Search product here ..'
+                  // aria-describedby='basic-addon2'
+                  onInput={e=>setSearch(e.target.value)}
+                  onKeyDown={e=>{
+                  if(e.key=="Enter") return handleSearch(e)
+                  
+                  }}
                 />
                 <span className='input-group-text bg-warning'
-                  id="basic-addon2"><BsSearch color='black' className='fs-6' /> </span>
+                  id="basic-addon2" onClick={handleSearch}  ><BsSearch color='black' className='fs-6' /> </span>
               </div>
             </div>
             <div className="col-md-12 col-lg">

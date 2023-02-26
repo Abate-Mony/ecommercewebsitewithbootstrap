@@ -83,6 +83,37 @@ import ig_02 from './clothimages/ig_02.jpg'
 import ig_03 from './clothimages/ig_03.jpg'
 import ig_04 from './clothimages/ig_04.jpg'
 import ig_05 from './clothimages/ig_05.jpg'
+// shoes from constant
+import shoe_1 from '../Constants/images/products/shoe-1.jpg'
+import shoe_2 from '../Constants/images/products/shoe-2.jpg'
+import shoe_3 from '../Constants/images/products/shoe-3.jpg'
+import shoe_4 from '../Constants/images/products/shoe-4.jpg'
+import shoe_5 from '../Constants/images/products/shoe-5.jpg'
+import sports_4 from '../Constants/images/products/sports-4.jpg'
+
+
+
+import jacket_1 from '../Constants/images/products/jacket-1.jpg'
+import jacket_2 from '../Constants/images/products/jacket-2.jpg'
+import jacket_3 from '../Constants/images/products/jacket-3.jpg'
+import jacket_4 from '../Constants/images/products/jacket-4.jpg'
+
+
+
+
+import hoodie_1 from '../Constants/images/products/3.jpg'
+import hoodie_2 from '../Constants/images/products/2.jpg'
+
+
+
+import short_1 from '../Constants/images/products/shorts-1.jpg'
+import short_2 from '../Constants/images/products/shorts-2.jpg'
+
+import shirt_1 from '../Constants/images/products/shirt-1.jpg'
+import shirt_2 from '../Constants/images/products/shirt-2.jpg'
+
+
+
 
 
 export {
@@ -164,5 +195,28 @@ export {
     ig_03,
     ig_04,
     ig_05
+
+
+    // 
+    ,
+    jacket_1,
+    jacket_2,
+    jacket_3,
+    jacket_4,
+
+    hoodie_1,
+    hoodie_2,
+
+    shirt_1,
+    shirt_2,
+
+    short_1,
+    short_2,
+
+    shoe_1,
+    shoe_2,
+    shoe_3,
+    shoe_4,
+    shoe_5,
 
 }

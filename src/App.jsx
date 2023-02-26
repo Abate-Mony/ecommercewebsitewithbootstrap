@@ -9,16 +9,17 @@ import { Home, About, Notfound, Contact, OurBlog, Product, User, Auth, Blog } fr
 import { useState } from 'react'
 // import News from './Container/News/News'
 
-
-
+import "/node_modules/flag-icons/css/flag-icons.min.css"
 
 function App() {
     const [toggleSideBar, setToggleSideBar] = useState(false)
-
+   
     return (
         <div className={`bg-light fw-lighter ${toggleSideBar ? "overflow-hidden" : "overflow-auto"}`} style={{
             overflowX: "hidden !important"
         }} >
+        {/* <span className='fi fi-af'></span> */}
+        {/* <span className='fi fi-gr fis'></span> */}
             <Routes>
                 <Route path="/" element={<Layout
                     setToggleSideBar={setToggleSideBar

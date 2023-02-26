@@ -1,6 +1,6 @@
 import './home.css'
 import ProdutCard from './../../components/Product/Product'
-import { ProductData } from '../../Constants/ProductImage'
+import { ProductData, shoes } from '../../Constants/ProductImage'
 import {
   service_01, service_02, service_03, service_04,
   service_05, laptop, camera, tv, acc, homeapp, headphone, watch, speaker
@@ -162,7 +162,7 @@ const Home = () => {
                   <img src={womenbanner} alt="banner" className='position-absolute w-100 h-100 img-fluid' />
                 </div>
               </div>
-              <div className="col-6 m-0 p-0   position-relative  bg-danger " style={{
+              <div className="col-6 m-0 p-0   position-relative  " style={{
                 height: "12rem"
               }} ref={sliderContainer}>
 
@@ -177,73 +177,30 @@ const Home = () => {
                   }}
                   direction="vertical"
                   pagination={{ clickable: true }}
-                  scrollbar={{ draggable: true }}
+                  // scrollbar={{ draggable: true }}
                 >
 
-                  <SwiperSlide >
-                    <div className='bg-warning h-100 d-flex flex-column' >
-                      <div className='shadow bg-dar' style={{
-                        flex: "1"
 
-                      }}>
-                        <p>Women <br className='d-lg-none' /> Shoes</p>
-                      </div>
-                      <div className='shadow bg-white' style={{
-                        flex: "1"
+                  {
+                    shoes.map((shoe) => {
 
-                      }}>
-                        <p>1 <br className='d-lg-none' /> Bags</p>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide >
-                    <div className='bg-dark h-100 d-flex flex-column' >
-                      <div className='shadow bg-dar' style={{
-                        flex: "1"
+                      return (
 
-                      }}>
-                        <p>Women <br className='d-lg-none' /> Shoes</p>
-                      </div>
-                      <div className='shadow bg-white' style={{
-                        flex: "1"
+                        <SwiperSlide key={shoe} >
+                          <div className='bg-warning h-100 d-flex flex-column' >
+                            <div className='shadow bg-dar' style={{
+                              flex: "1"
+                            }}>
+                              <img src={shoe} className='h-100 w-100' alt="" />
+                            </div>
 
-                      }}>
-                        <p>1 <br className='d-lg-none' /> Bags</p>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide >
-                    <div className='bg-secondary h-100 d-flex flex-column' >
-                      <div className='shadow bg-dar' style={{
-                        flex: "1"
+                          </div>
+                        </SwiperSlide>
+                      )
+                    })
 
-                      }}>
-                        <p>Women <br className='d-lg-none' /> Shoes</p>
-                      </div>
-                      <div className='shadow bg-white' style={{
-                        flex: "1"
+                  }
 
-                      }}>
-                        <p>1 <br className='d-lg-none' /> Bags</p>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide >
-                    <div className='bg-light h-100 d-flex flex-column' >
-                      <div className='shadow bg-dar' style={{
-                        flex: "1"
-
-                      }}>
-                        <p>Women <br className='d-lg-none' /> Shoes</p>
-                      </div>
-                      <div className='shadow bg-white' style={{
-                        flex: "1"
-
-                      }}>
-                        <p>1 <br className='d-lg-none' /> Bags</p>
-                      </div>
-                    </div>
-                  </SwiperSlide>
 
 
                 </Swiper>
@@ -259,8 +216,8 @@ const Home = () => {
           </div>
           <div className="col-md-6">
             <div className="row gx-1 model__cloth bg-white ">
-            
-              <div className="col-6 m-0 p-0   position-relative  bg-danger " style={{
+
+              <div className="col-6 m-0 p-0   position-relative   " style={{
                 height: "12rem"
               }} ref={sliderContainer}>
 
@@ -270,79 +227,33 @@ const Home = () => {
                     [Navigation, Pagination, Scrollbar, A11y, Autoplay]
                   }
                   autoplay={{
-                    delay: 2500,
+                    delay: 2000,
                     disableOnInteraction: false
                   }}
                   direction="vertical"
                   pagination={{ clickable: true }}
-                  scrollbar={{ draggable: true }}
+                  // scrollbar={{ draggable: true }}
                 >
 
-                  <SwiperSlide >
-                    <div className='bg-warning h-100 d-flex flex-column' >
-                      <div className='shadow bg-dar' style={{
-                        flex: "1"
+                  {
+                    shoes.map((shoe) => {
 
-                      }}>
-                        <p>Women <br className='d-lg-none' /> Shoes</p>
-                      </div>
-                      <div className='shadow bg-white' style={{
-                        flex: "1"
+                      return (
 
-                      }}>
-                        <p>1 <br className='d-lg-none' /> Bags</p>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide >
-                    <div className='bg-dark h-100 d-flex flex-column' >
-                      <div className='shadow bg-dar' style={{
-                        flex: "1"
+                        <SwiperSlide key={shoe} >
+                          <div className='bg-warning h-100 d-flex flex-column' >
+                            <div className='shadow bg-dar' style={{
+                              flex: "1"
+                            }}>
+                              <img src={shoe} className='h-100 w-100' alt="" />
+                            </div>
 
-                      }}>
-                        <p>Women <br className='d-lg-none' /> Shoes</p>
-                      </div>
-                      <div className='shadow bg-white' style={{
-                        flex: "1"
+                          </div>
+                        </SwiperSlide>
+                      )
+                    })
 
-                      }}>
-                        <p>1 <br className='d-lg-none' /> Bags</p>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide >
-                    <div className='bg-secondary h-100 d-flex flex-column' >
-                      <div className='shadow bg-dar' style={{
-                        flex: "1"
-
-                      }}>
-                        <p>Women <br className='d-lg-none' /> Shoes</p>
-                      </div>
-                      <div className='shadow bg-white' style={{
-                        flex: "1"
-
-                      }}>
-                        <p>1 <br className='d-lg-none' /> Bags</p>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide >
-                    <div className='bg-light h-100 d-flex flex-column' >
-                      <div className='shadow bg-dar' style={{
-                        flex: "1"
-
-                      }}>
-                        <p>Women <br className='d-lg-none' /> Shoes</p>
-                      </div>
-                      <div className='shadow bg-white' style={{
-                        flex: "1"
-
-                      }}>
-                        <p>1 <br className='d-lg-none' /> Bags</p>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-
+                  }
 
                 </Swiper>
 
@@ -356,14 +267,14 @@ const Home = () => {
               <div className="col m-0 ">
                 <div className='model__cloth-left shadow  overflow-hidden rounded-3 position-relative'>
                   <img src={menbanner} alt="banner" className='position-absolute w-100 h-100 img-fluid' />
-                    <h3 className="bg-danger fw-light px-3 rounded-3 fs-6 position-absolute top-0 start-0" style={{
-                      width: "fit-content"
-                    }}>hot</h3>
+                  <h3 className="bg-danger fw-light px-3 rounded-3 fs-6 position-absolute top-0 start-0" style={{
+                    width: "fit-content"
+                  }}>hot</h3>
                 </div>
               </div>
             </div>
           </div>
-       
+
 
 
         </div>
