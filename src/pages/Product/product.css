@@ -29,14 +29,17 @@
 }
 
 .review__alert-wrapper .alert__container {
-    max-width: calc(100% - 60px);
-    max-width: calc(100vh - 60px);
+    /* max-width: calc(100% - 60px); */
+    max-width: calc(100vw - 30px);
     width: 400px;
     height: 600px;
+    max-height: calc(100vh - 60px);
     background: white;
     border-radius: 1rem;
     scale: 0;
     transition: scale 0.4s ease;
+    justify-content: start;
+    overflow-y: auto !important;
 }
 
 .review__alert-wrapper .overlay input:focus {

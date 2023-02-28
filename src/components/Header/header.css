@@ -48,40 +48,6 @@
     transition: color 0.3s ease-in-out;
 }
 
-.header__sidebar-container {
-    visibility: hidden;
-    pointer-events: none;
-    height: 100svh;
-}
-
-.header__sidebar-container.active {
-    visibility: visible;
-    pointer-events: all;
-}
-
-.header__sidebbar-content {
-    user-select: none;
-    position: absolute;
-    padding-top: 2rem;
-    width: fit-content;
-    height: 100%;
-    width: min(calc(100% - 40px), 320px);
-    transition: left 0.4s ease;
-    left: -100%;
-}
-
-.header__sidebbar-content.active {
-    left: 0;
-}
-
-.header__sidebbar-content li {
-    list-style: none;
-    font-size: 1.5rem;
-    color: gray !important;
-    font-weight: 700;
-    text-transform: capitalize;
-}
-
 @media screen and (max-width: 578px) {
     .header__bottom-strip .dropdown button,
     .header__bottom-strip .dropdown-links p {

@@ -44,24 +44,6 @@ import watch_5 from '../Constants/images/products/watch-1.jpg'
 
 // import images 
 
-import product_01 from './clothimages/product_01.jpg'
-import product_02 from './clothimages/product_02.jpg'
-import product_03 from './clothimages/product_03.jpg'
-import product_04 from './clothimages/product_04.jpg'
-import product_05 from './clothimages/product_05.jpg'
-import product_06 from './clothimages/product_06.jpg'
-import product_07 from './clothimages/product_07.jpg'
-import product_08 from './clothimages/product_08.jpg'
-
-import product_01b from './clothimages/product_01b.jpg'
-import product_02b from './clothimages/product_02b.jpg'
-import product_03b from './clothimages/product_03b.jpg'
-import product_04b from './clothimages/product_04b.jpg'
-import product_05b from './clothimages/product_05b.jpg'
-import product_06b from './clothimages/product_06b.jpg'
-import product_07b from './clothimages/product_07b.jpg'
-import product_08b from './clothimages/product_08.jpg'
-
 
 
 
@@ -93,6 +75,9 @@ import sports_4 from '../Constants/images/products/sports-4.jpg'
 
 
 
+
+
+
 import jacket_1 from '../Constants/images/products/jacket-1.jpg'
 import jacket_2 from '../Constants/images/products/jacket-2.jpg'
 import jacket_3 from '../Constants/images/products/jacket-3.jpg'
@@ -103,16 +88,36 @@ import jacket_4 from '../Constants/images/products/jacket-4.jpg'
 
 import hoodie_1 from '../Constants/images/products/3.jpg'
 import hoodie_2 from '../Constants/images/products/2.jpg'
+import hoodie_3 from '../Constants/images/images/clothimage (7).jpg'
+import hoodie_4
+from '../Constants/images/images/clothimage (23).jpg'
+import hoodie_5
+from '../Constants/images/images/clothimage (8).jpg'
+
+import trousers_1
+from '../Constants/images/images/clothimage (3).jpg'
+import trousers_2
+from '../Constants/images/images/clothimage (5).jpg'
+import trousers_3
+from '../Constants/images/images/clothimage (35).jpg'
+import trousers_4
+from '../Constants/images/images/clothimage (36).jpg'
 
 
 
 import short_1 from '../Constants/images/products/shorts-1.jpg'
 import short_2 from '../Constants/images/products/shorts-2.jpg'
+import short_3 from '../Constants/images/images/clothimage (33).jpg'
+import short_4 from '../Constants/images/images/clothimage (41).jpg'
+import short_5 from '../Constants/images/images/clothimage (42).jpg'
 
 import shirt_1 from '../Constants/images/products/shirt-1.jpg'
 import shirt_2 from '../Constants/images/products/shirt-2.jpg'
+import shirt_3 from '../Constants/images/images/clothimage (37).jpg'
+import shirt_4 from '../Constants/images/images/clothimage (38).jpg'
 
-
+import nike_1 from '../Constants/images/images/clothimage (1).jpg'
+import nike_2 from '../Constants/images/images/clothimage (2).jpg'
 
 
 
@@ -158,24 +163,8 @@ export {
     watch_4,
     watch_5,
 
-    product_01,
-    product_02,
-    product_03,
-    product_04,
-    product_05,
-    product_06,
-    product_07,
-    product_08,
 
 
-    product_01b,
-    product_02b,
-    product_03b,
-    product_04b,
-    product_05b,
-    product_06b,
-    product_07b,
-    product_08b,
 
     slider_01,
     slider_02,
@@ -203,20 +192,35 @@ export {
     jacket_2,
     jacket_3,
     jacket_4,
+    // jacket_5,
 
     hoodie_1,
     hoodie_2,
+    hoodie_3,
+    hoodie_4,
+    hoodie_5,
+    trousers_1,
+    trousers_2,
+    trousers_3,
+    trousers_4,
 
     shirt_1,
     shirt_2,
+    shirt_3,
+    shirt_4,
 
     short_1,
     short_2,
+    short_3,
+    short_4,
+    short_5,
 
     shoe_1,
     shoe_2,
     shoe_3,
     shoe_4,
     shoe_5,
+    nike_1,
+    nike_2
 
 }

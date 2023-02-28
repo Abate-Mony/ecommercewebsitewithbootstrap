@@ -3,8 +3,13 @@ import './user.css'
 import React from 'react'
 import {useNavigate} from 'react-router-dom'
 import {useState} from 'react'
-import { FiSettings } from 'react-icons/fi'
-import{AiOutlineHome,AiOutlineMenu,AiOutlineStar,AiOutlineArrowLeft} from 'react-icons/ai'
+import { FiCalendar, FiChrome, FiDroplet, FiInstagram, FiLinkedin, FiMaximize, FiSave, FiSettings, FiYoutube } from 'react-icons/fi'
+import {MdLanguage} from 'react-icons/md'
+import {GiWorld} from 'react-icons/gi'
+import {GrReactjs} from 'react-icons/gr'
+import {FaVuejs} from 'react-icons/fa'
+
+import{AiOutlineHome,AiOutlineMenu,AiOutlineStar,AiOutlineArrowLeft, AiOutlineUser} from 'react-icons/ai'
 import {NavLink} from "react-router-dom"
 const vibrateConst=20
 const User = () => {
@@ -26,9 +31,9 @@ const navigate=useNavigate()
                     <div className="ms-auto d-flex" style={{
                         width: "fit-content"
                     }}>
-                        <h3 className='fs-4  ff-shadow'>English</h3>
-                        <p className='ms-2 me-4'>[]</p>
-                        <FiSettings size={20} />
+                        <h3 className='fs-5  ff-shadow'>English</h3>
+                        <p className='ms-2 me-4 text-white'><MdLanguage  color='white' className='text-white' size={25}/></p>
+                        {/* <FiSettings size={20} /> */}
                     </div>
 
                 </div>
@@ -38,109 +43,89 @@ const navigate=useNavigate()
             align-items-center" style={{
                     height: "40px",
                     marginTop: "-20px",
-          
-
                 }} onClick={()=>navigate("/auth")}>
-                <h3 className='fs-6 pt-1 text-black'>login /</h3>
-                <h3 className='fs-6 pt-1 text-black'>Register</h3>
+                <h3 className='fs-6 pt-1 text-black ff-manrope'>Login /</h3>
+                <h3 className='fs-6 pt-1 text-black ff-manrope'>Register</h3>
 
             </div>
-            <div className='d-flex container mt-5 px-4  mb-4  '>
-                <h4 className="fw-bold">My Order</h4>
+            <div className='d-flex container mt-5 px-4  mb-4'>
+                <h4 className="fw-semibold fs-4 ff-manrope">My Order</h4>
                 <p className='ms-auto text-primary fw-light' onClick={()=>setView(!view)}> {view?"View Less":"View All"}</p>
             </div>
 
-            <div className={`d-flex overflow-auto  pb-3 px-2 bg-light container ${view?"flex-wrap justify-content-center":" scrollto"}`}>
+            <div className={`d-flex overflow-auto  pb-3 px-2 bg-light container
+            ${view?"flex-wrap justify-content-center":" scrollto"}`} style={{
+                transition:"all 2s ease"
+            }}>
                 <div className='shadow bg-white rounded-3 p-2 mx-1 mb-3' style={{
-                    flex: "none"
+                    flex: "none",
+                    
                 }}>
-                    <FiSettings size={30} className="d-block mx-auto" />
-                    <p className='mb-0 mt-2'>pending Payment</p>
+                    <AiOutlineUser size={30} className="d-block mx-auto" />
+                    <p className='mb-0 mt-2'>User Payment</p>
                 </div>
                 <div className='shadow bg-white rounded-3 p-2 mx-1 mb-3' style={{
                     flex: "none"
                 }}>
-                    <FiSettings size={30} className="d-block mx-auto" />
-                    <p className='mb-0 mt-2'>pending Payment</p>
+                    <GiWorld size={30} className="d-block mx-auto" />
+                    <p className='mb-0 mt-2'>World Fast Api</p>
                 </div>
                 <div className='shadow bg-white rounded-3 p-2 mx-1 mb-3' style={{
                     flex: "none"
                 }}>
-                    <FiSettings size={30} className="d-block mx-auto" />
-                    <p className='mb-0 mt-2'>pending Payment</p>
+                    <FaVuejs size={30} className="d-block mx-auto" />
+                    <p className='mb-0 mt-2'>Modern Technology</p>
                 </div>
                 <div className='shadow bg-white rounded-3 p-2 mx-1 mb-3' style={{
                     flex: "none"
                 }}>
-                    <FiSettings size={30} className="d-block mx-auto" />
-                    <p className='mb-0 mt-2'>pending Payment</p>
+                    <GrReactjs size={30} className="d-block mx-auto" />
+                    <p className='mb-0 mt-2'>Upgraged Systems</p>
                 </div>
                 <div className='shadow bg-white rounded-3 p-2 mx-1 mb-3' style={{
                     flex: "none"
                 }}>
-                    <FiSettings size={30} className="d-block mx-auto" />
-                    <p className='mb-0 mt-2'>pending Payment</p>
+                    <FiSave size={30} className="d-block mx-auto" />
+                    <p className='mb-0 mt-2'>Save From Hackers</p>
                 </div>
                 <div className='shadow bg-white rounded-3 p-2 mx-1 mb-3' style={{
                     flex: "none"
                 }}>
-                    <FiSettings size={30} className="d-block mx-auto" />
-                    <p className='mb-0 mt-2'>pending Payment</p>
+                    <FiYoutube size={30} className="d-block mx-auto" />
+                    <p className='mb-0 mt-2'>Compactable with Modern tech</p>
                 </div>
                 <div className='shadow bg-white rounded-3 p-2 mx-1 mb-3' style={{
                     flex: "none"
                 }}>
-                    <FiSettings size={30} className="d-block mx-auto" />
-                    <p className='mb-0 mt-2'>pending Payment</p>
+                    <FiInstagram size={30} className="d-block mx-auto" />
+                    <p className='mb-0 mt-2'>Connecting the World</p>
                 </div>
                 <div className='shadow bg-white rounded-3 p-2 mx-1 mb-3' style={{
                     flex: "none"
                 }}>
-                    <FiSettings size={30} className="d-block mx-auto" />
-                    <p className='mb-0 mt-2'>pending Payment</p>
+                    <FiDroplet size={30} className="d-block mx-auto" />
+                    <p className='mb-0 mt-2'>drop on price scale</p>
                 </div>
                 <div className='shadow bg-white rounded-3 p-2 mx-1 mb-3' style={{
                     flex: "none"
                 }}>
-                    <FiSettings size={30} className="d-block mx-auto" />
-                    <p className='mb-0 mt-2'>pending Payment</p>
+                    <FiCalendar size={30} className="d-block mx-auto" />
+                    <p className='mb-0 mt-2'>Payment On Time</p>
                 </div>
                 <div className='shadow bg-white rounded-3 p-2 mx-1 mb-3' style={{
                     flex: "none"
                 }}>
-                    <FiSettings size={30} className="d-block mx-auto" />
-                    <p className='mb-0 mt-2'>pending Payment</p>
+                    <FiMaximize size={30} className="d-block mx-auto" />
+                    <p className='mb-0 mt-2'>Maximize Payment</p>
                 </div>
                 <div className='shadow bg-white rounded-3 p-2 mx-1 mb-3' style={{
                     flex: "none"
                 }}>
-                    <FiSettings size={30} className="d-block mx-auto" />
-                    <p className='mb-0 mt-2'>pending Payment</p>
+                    <FiLinkedin size={30} className="d-block mx-auto" />
+                    <p className='mb-0 mt-2'>Social Workings </p>
                 </div>
-                <div className='shadow bg-white rounded-3 p-2 mx-1 mb-3' style={{
-                    flex: "none"
-                }}>
-                    <FiSettings size={30} className="d-block mx-auto" />
-                    <p className='mb-0 mt-2'>pending Payment</p>
-                </div>
-                <div className='shadow bg-white rounded-3 p-2 mx-1 mb-3' style={{
-                    flex: "none"
-                }}>
-                    <FiSettings size={30} className="d-block mx-auto" />
-                    <p className='mb-0 mt-2'>pending Payment</p>
-                </div>
-                <div className='shadow bg-white rounded-3 p-2 mx-1 mb-3' style={{
-                    flex: "none"
-                }}>
-                    <FiSettings size={30} className="d-block mx-auto" />
-                    <p className='mb-0 mt-2'>pending Payment</p>
-                </div>
-                <div className='shadow bg-white rounded-3 p-2 mx-1 mb-3' style={{
-                    flex: "none"
-                }}>
-                    <FiSettings size={30} className="d-block mx-auto" />
-                    <p className='mb-0 mt-2'>pending Payment</p>
-                </div>
+                
+                
 
             </div>
             <div className="wrapper bg-white my-5 container shadow rounded-1">
@@ -179,11 +164,11 @@ const navigate=useNavigate()
                     <p className='fw-light text-dark fs-6 m-0 p-0 '>Wish List</p>
                 </div>
                 <div className="d-flex gap-3 align-items-center py-3 ps-4">
-                    <FiSettings size={20} />
+                    <FiMaximize size={20} />
                     <p className='fw-light text-dark fs-6 m-0 p-0 '>Stored Follow</p>
                 </div>
                 <div className="d-flex gap-3 align-items-center py-3 ps-4">
-                    <FiSettings size={20} />
+                    <FiChrome size={20} />
                     <p className='fw-light text-dark fs-6 m-0 p-0 '>Recent View</p>
                 </div>
              

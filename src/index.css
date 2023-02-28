@@ -25,6 +25,7 @@
     --color-secondary: hsl(252, 100%, 90%);
     --color-primary: hsl(252, 75%, 60%);
     --shining-black: rgb(7, 7, 12);
+    --scroll-to-height: 8px;
 }
 
 .title {
@@ -86,7 +87,7 @@ body {
 
 .scrollto::-webkit-scrollbar {
     width: 12px;
-    height: 8px;
+    height: var(--scroll-to-height);
 }
 
 .scrollto::-webkit-scrollbar-thumb {

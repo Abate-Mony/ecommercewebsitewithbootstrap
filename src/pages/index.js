@@ -11,6 +11,8 @@ import Product from "./Product/Product";
 import User from "./User/User";
 import Auth from "./Auth/Auth";
 import Blog from "./Blog/Blog";
+import Categories from "./Categories/Categories";
+import Cart from "./Cart/Cart"
 export {
     Home,
     About,
@@ -20,5 +22,7 @@ export {
     Product,
     User,
     Auth,
-    Blog
+    Blog,
+    Categories,
+    Cart
 }

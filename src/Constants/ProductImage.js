@@ -37,28 +37,6 @@ import {
 
 
 
-    product_01b,
-    product_02b,
-    product_03b,
-    product_04b,
-    product_05b,
-    product_06b,
-    product_07b,
-    product_08b,
-
-    slider_01,
-    slider_02,
-    slider_03,
-
-    guide_01,
-    guide_02,
-    guide_03,
-
-
-    blog_01,
-    blog_02,
-    blog_03,
-
     jacket_1,
     jacket_2,
     jacket_3,
@@ -66,46 +44,85 @@ import {
 
     hoodie_1,
     hoodie_2,
+    hoodie_3,
+    hoodie_4,
 
     shirt_1,
     shirt_2,
+    shirt_3,
+    shirt_4,
 
     short_1,
     short_2,
+
+    short_3,
+    short_4,
+    short_5,
     shoe_1,
     shoe_2,
     shoe_3,
     shoe_4,
     shoe_5,
-
+    watch_1,
+    watch_2,
+    watch_3,
+    watch_4,
+    watch_5,
+    trousers_1,
+    trousers_2,
+    trousers_3,
+    trousers_4,
 
 
 } from './Images'
 
 
-export const shoes = [
-    shoe_1,
-    shoe_2,
-    shoe_3,
-    shoe_4,
-    shoe_5,
-]
 
+export const shoes = {
+    men: [
+        shoe_1,
+        shoe_2,
+        shoe_3,
+        shoe_4,
+        shoe_5,
+    ]
+
+}
+export const jackets = {
+    _id: 3,
+    men: [
+        jacket_1,
+        jacket_2,
+        jacket_3,
+        jacket_4,
+    ],
+    women: []
+}
+export const watches = {
+    _id: 2,
+    men: [watch_1,
+        watch_2,
+        watch_3,
+        watch_4,
+        watch_5,
+    ]
+}
 const ProductDataElectronic = [{
-
+            _id: 0,
             productImage: [
                 headphones_a_1,
                 headphones_a_2,
                 headphones_a_3,
                 headphones_a_4,
             ],
-            productName: "HeadPhones 2.0",
+            productName: "HeadPhones",
             productDescript: "Scale with the best sound width ultra band width ",
             productPrice: 1223,
             productCancel: 222
 
         },
         {
+            _id: 1,
             productImage: [
                 headphones_b_1,
                 headphones_b_2,
@@ -118,6 +135,7 @@ const ProductDataElectronic = [{
             productCancel: 222
 
         }, {
+            _id: 2,
             productImage: [
                 headphones_c_1,
                 headphones_c_2,
@@ -130,6 +148,7 @@ const ProductDataElectronic = [{
             productCancel: 222
 
         }, {
+            _id: 3,
             productImage: [
                 earphones_a_1,
                 earphones_a_2,
@@ -142,6 +161,7 @@ const ProductDataElectronic = [{
             productCancel: 222
 
         }, {
+            _id: 4,
             productImage: [
                 earphones_b_1,
                 earphones_b_2,
@@ -155,6 +175,8 @@ const ProductDataElectronic = [{
 
         },
         {
+
+            _id: 5,
             productImage: [
                 earphones_c_1,
                 earphones_c_2,
@@ -168,6 +190,7 @@ const ProductDataElectronic = [{
 
         },
         {
+            _id: 6,
             productImage: [
                 speaker1,
                 speaker2,
@@ -180,25 +203,44 @@ const ProductDataElectronic = [{
             productCancel: 222
 
         },
-        {
 
+        {
+            _id: 7,
+            productImage: [
+                watch_1,
+                watch_2,
+                watch_3,
+                watch_4,
+                watch_5,
+            ],
+            productName: "Watches",
+            productDescript: "Find the best Speakerss here ",
+            productPrice: 1223,
+            productCancel: 222
+
+        },
+        {
+            _id: 8,
             productImage: [
                 jacket_1,
                 jacket_2,
                 jacket_3,
                 jacket_4
             ],
-            productName: "Jacket ",
+            productName: "Jackets",
             productDescript: "Roller scoster ",
             productPrice: 1223,
             productCancel: 222
 
         },
         {
-
+            _id: 9,
             productImage: [
                 short_1,
-                short_2
+                short_2,
+                short_3,
+                short_4,
+                short_5,
             ],
             productName: "Short for shot",
             productDescript: "Clean brown white shrt ",
@@ -207,12 +249,43 @@ const ProductDataElectronic = [{
 
         },
         {
-
+            _id: 10,
             productImage: [
                 shirt_1,
-                shirt_2
+                shirt_2,
+                shirt_3,
+                shirt_4,
+
             ],
             productName: "Shirt for Men !",
+            productDescript: "Clean brown white shrt ",
+            productPrice: 1223,
+            productCancel: 222
+
+        },
+        {
+            _id: 11,
+            productImage: [
+                hoodie_1,
+                hoodie_2,
+                hoodie_3,
+                hoodie_4,
+            ],
+            productName: "Hoodie",
+            productDescript: "Clean brown white shrt ",
+            productPrice: 1223,
+            productCancel: 222
+
+        },
+        {
+            _id: 12,
+            productImage: [
+                trousers_1,
+                trousers_2,
+                trousers_3,
+                trousers_4,
+            ],
+            productName: "nikes trousers",
             productDescript: "Clean brown white shrt ",
             productPrice: 1223,
             productCancel: 222

@@ -17,9 +17,10 @@ import { Hero } from '../../Container'
 import { useState, useEffect, useRef } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper'
+import { useNavigate } from 'react-router-dom'
 const Home = () => {
 
-
+  const navigate = useNavigate()
 
 
   const [acceptCookies, setAcceptCookies] = useState(false)
@@ -152,71 +153,18 @@ const Home = () => {
 
 
       {/* women/men */}
-      <div className="container-md ">
+      <div className="container-md " onClick={() => navigate("/categories/name")}>
         <div className="row bg-light  gy-4">
-
-          <div className="col-md-6">
+          <div className="col-lg-8">
             <div className="row gx-1 model__cloth bg-white ">
-              <div className="col m-0 ">
+            <div className="col m-0 ">
                 <div className='model__cloth-left shadow  overflow-hidden rounded-3 position-relative'>
-                  <img src={womenbanner} alt="banner" className='position-absolute w-100 h-100 img-fluid' />
+                  <img src={menbanner} alt="banner" className='position-absolute w-100 h-100 img-fluid' />
+                  <h3 className="bg-danger fw-light px-3 rounded-3 fs-6 position-absolute top-0 start-0" style={{
+                    width: "fit-content"
+                  }}>hot</h3>
                 </div>
               </div>
-              <div className="col-6 m-0 p-0   position-relative  " style={{
-                height: "12rem"
-              }} ref={sliderContainer}>
-
-                <Swiper className='h-100' spaceBetween={3} slidesPerView={1} onSlideChange={() => console.log("slide change")}
-                  onSwiper={(swiper) => console.log(swiper)}
-                  modules={
-                    [Navigation, Pagination, Scrollbar, A11y, Autoplay]
-                  }
-                  autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false
-                  }}
-                  direction="vertical"
-                  pagination={{ clickable: true }}
-                  // scrollbar={{ draggable: true }}
-                >
-
-
-                  {
-                    shoes.map((shoe) => {
-
-                      return (
-
-                        <SwiperSlide key={shoe} >
-                          <div className='bg-warning h-100 d-flex flex-column' >
-                            <div className='shadow bg-dar' style={{
-                              flex: "1"
-                            }}>
-                              <img src={shoe} className='h-100 w-100' alt="" />
-                            </div>
-
-                          </div>
-                        </SwiperSlide>
-                      )
-                    })
-
-                  }
-
-
-
-                </Swiper>
-
-
-
-
-
-
-
-              </div>
-            </div>
-          </div>
-          <div className="col-md-6">
-            <div className="row gx-1 model__cloth bg-white ">
-
               <div className="col-6 m-0 p-0   position-relative   " style={{
                 height: "12rem"
               }} ref={sliderContainer}>
@@ -232,11 +180,10 @@ const Home = () => {
                   }}
                   direction="vertical"
                   pagination={{ clickable: true }}
-                  // scrollbar={{ draggable: true }}
                 >
 
                   {
-                    shoes.map((shoe) => {
+                    shoes.men.map((shoe) => {
 
                       return (
 
@@ -264,14 +211,7 @@ const Home = () => {
 
 
               </div>
-              <div className="col m-0 ">
-                <div className='model__cloth-left shadow  overflow-hidden rounded-3 position-relative'>
-                  <img src={menbanner} alt="banner" className='position-absolute w-100 h-100 img-fluid' />
-                  <h3 className="bg-danger fw-light px-3 rounded-3 fs-6 position-absolute top-0 start-0" style={{
-                    width: "fit-content"
-                  }}>hot</h3>
-                </div>
-              </div>
+           
             </div>
           </div>
 
@@ -317,22 +257,14 @@ const Home = () => {
 
       </section>
 
-      {/* <section className="home__categories">
-        <div className="container">
-
-          <div className="row">
-
-
-          </div>
-        </div>
-      </section> */}
+      
 
       <section className="home__collections mb-5 container-md">
         <h2 className='fs-1 text-black py-5
-        ps-md-3 text-center text-md-start  '>Featured Collections</h2>
+        ps-md-3 text-center text-md-start  ff-manrope fw-semibold'>Featured Collections</h2>
         <div className="container-xxl-">
 
-          <div className="row gy-4 gx-1 gx-sm-2 gx-md-3 gx-lg-1 px-2 align-items-start justify-content-center justify-content-md-start">
+          <div className="row gy-4 gx-1 gx-sm-2 gx-md-3 gx-lg-1 px-2 align-items-start justify-content-start justify-content-md-start">
 
             {
               ProductData.map((item, index) => {

@@ -1,17 +1,15 @@
 import './product.css'
 import { useParams } from 'react-router-dom'
 import { ProductData } from '../../Constants/ProductImage'
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay ,EffectCube} from 'swiper'
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay, EffectCube } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
-// import {  } from 'swiper'
 
 import { Product as Related } from '../../components'
 import { AiFillStar } from 'react-icons/ai'
 import { useEffect, useRef, useState } from 'react'
 import ReactStars from 'react-rating-stars-component'
-import { BsSearch } from 'react-icons/bs'
 import { BiShare } from 'react-icons/bi'
-// import {priceta} from "react-icons/io"
+import { MdFavorite, MdOutlineRecommend } from 'react-icons/md'
 
 
 
@@ -76,28 +74,41 @@ const Product = () => {
 
       {/* modal here */}
       <div className={`overlay ${active ? "active" : ""}`} onClick={() => setActive(false)}>
-        <div className={`alert__container shadow ${active ? "active" : ""}`} onClick={(e) => e.stopPropagation()}>
+        <div className={`alert__container shadow-lg text-start py-3 pt-0 overflow-hidden bg-light  ${active ? "active" : ""}`} onClick={(e) => e.stopPropagation()}>
+          <h2 className="fw-seminbold fs-5 container shadow-lg bg-white text-black py-3 ff-manrope text-center">
+            Your recommendation <MdOutlineRecommend size={20} className="ms-2" /></h2>
+          <p className="text-muted fs- fw-semibold text-uppercase ff-manrope container mb-0">title</p>
+
           <div className=" 
-            d-flex align-items-center pb-4 border-bottom border-3 px-3 pt-2">
-            <div className="input-group border-0">
+            d-flex align-items-center pb-4 border-bottom- border-3 container pt-2 ">
+            <div className="input-group  border border-dark border-2 rounded-5 overflow-hidden">
               <span className='input-group-text bg-transparent border-0'
-                id="basic-addon2"><BsSearch color='black' className='fs-6' /> </span>
+                id="basic-addon2"><MdFavorite color='black' className='fs-6' /> </span>
               <input type="text"
-                className='form-control ps-3 border-0'
-                placeholder='Search product here .. '
+                className='form-control ps-3 py-2 border-0'
+                placeholder='title here '
                 aria-controls='Search product here ..'
                 aria-describedby='basic-addon2'
 
               />
-
             </div>
 
-          </div>
-          <div className="form-group container py-5">
-            <textarea name="name" id="input" cols="30" rows="10" className="w-100 border-none"></textarea>
-          </div>
 
+          </div>
+          <p className="text-muted fs- fw-semibold text-uppercase ff-manrope container mb-0">Details</p>
 
+          <div className="form-group container py-2">
+            <textarea name="name"
+              id="input" cols="30" rows="10" placeholder='&nbsp;&nbsp;&nbsp;&nbsp;Your Description here '
+              className="w-100 border-none rounded-3 ps-3"></textarea>
+          </div>
+          <div className="d-flex justify-content-center w-100">
+            <button className="btn btn-outline-dark  text-center rounded-pill mx-auto " style={{
+              width: "200px",
+              maxWidth: "calc(100% - 30px)",
+            }}>Submit</button>
+          </div>
+          <p className="ff-shadow text-center py-2 pb-0">please follow community guide</p>
         </div>
 
 
@@ -122,7 +133,7 @@ const Product = () => {
               })}
 
             </div>
-            <div className='col-md-10'>
+            <div className='col-md-10' >
 
 
 
@@ -146,14 +157,18 @@ const Product = () => {
                   shadowScale: 0.94
 
                 }}
-            
-              pagination={{ clickable: true }}
+
+                pagination={{ clickable: true }}
               >
                 {ProductData[id]?.productImage?.map((imgUrl, index) => {
                   return (
                     <SwiperSlide>
                       <div className="product__img-container w-100" key={index}>
-                        <img src={imgUrl} alt={index} className='w-100 h-100 ' />
+                        <img src={imgUrl} alt={index} className='w-100' style={{
+                          height: "25rem",
+                          maxHeight: "calc(100vh - 40px)",
+                          objectFit:"cover"
+                        }} />
                       </div>
                     </SwiperSlide>
                   )

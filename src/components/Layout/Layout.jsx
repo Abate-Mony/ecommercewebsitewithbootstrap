@@ -2,13 +2,14 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { AiOutlineArrowUp } from 'react-icons/ai'
 
-import { Outlet } from 'react-router-dom'
+import { Outlet ,useNavigate} from 'react-router-dom'
 import { Header, Footer } from '../'
 import { AiOutlineHome, AiOutlineMenu, AiOutlineStar } from 'react-icons/ai'
 import { BsBag } from 'react-icons/bs'
 import { NavLink } from "react-router-dom"
 const vibrateConst = 20
 const Layout = ({ toggleSideBar, setToggleSideBar }) => {
+const navigate=useNavigate()
   var counter = 0
   const [up, setUp] = useState(0)
   useEffect(() => {
@@ -28,7 +29,6 @@ const Layout = ({ toggleSideBar, setToggleSideBar }) => {
     <div className=''>
 
       <div className={`position-fixed top-auto end-0 home__arrow-scroll  rounded-circle bg-white  me-4 shadow d-flex align-items-center ${up == 0 ? "active" : "0"}`}
-
         style={{
           height: "50px",
           width: "50px",
@@ -76,13 +76,8 @@ const Layout = ({ toggleSideBar, setToggleSideBar }) => {
 
 
           </NavLink>
-          <div className="position-relative" onClick={() => setToggleSideBar(function () {
-            return true
-          })}>
-
+          <div className="position-relative" onClick={() =>navigate("/cart")}>
             <BsBag color='black' />
-            {/* <p className='text-dark text-uppercase mt-0 text-center mb-0'>favorite</p> */}
-            
             <div className="position-absolute  " style={{
               top: "-6px", right: "-5px"
             }}>

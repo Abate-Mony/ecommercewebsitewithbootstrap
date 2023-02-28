@@ -1,125 +1,27 @@
 
 import { NavLink, Link, useNavigate } from 'react-router-dom'
 import { BsSearch } from 'react-icons/bs'
-import { AiOutlineClose } from 'react-icons/ai'
 import { compare, wishlist, user, cart, menu } from './image'
 import './header.css'
 import { BsBag } from 'react-icons/bs'
 import { RiCloseFill } from 'react-icons/ri'
 import _person from './../../Constants/clothimages/product_02.jpg'
-import Card from '../Card/Card'
-import { ProductData } from '../../Constants/ProductImage'
-import {useState,useEffect} from 'react'
+import { useState } from 'react'
 
 
 
-const Header = ({ toggleSideBar, setToggleSideBar }) => {
-const navigate=useNavigate()
-const [search,setSearch]=useState("")
+const Header = ({ setToggleSideBar }) => {
+  const navigate = useNavigate()
+  const [search, setSearch] = useState("")
   const handleSearch = (e) => {
-  e.preventDefault()
-alert("search was called"+search)
-navigate("/our-store?name=paul&age=45&search="+search)
+    e.preventDefault()
+    navigate("/our-store?name=paul&age=45&search=" + search)
 
   }
 
   return (
     <>
-      <div className={`home__cart-righsidebar ${toggleSideBar && "active"}`}>
-
-        <div className={`home__cart-righside_content  ${toggleSideBar && "active"}`}>
-          <div className="position-absolute  paynow
-          
-          rounded-3
-          containers  bg-white w-100 pb-1 pt-4" style={{
-
-              top: "auto",
-              zIndex: 10,
-              marginTop: "auto",
-              bottom: "0"
-
-
-            }}>
-            <div className="d-flex  justify-content-between px-4">
-
-              <div>
-
-                <h2 className="text-muted ff-manrope">
-                  Total
-                </h2>
-                <h1 className='ff-manrope'>$267,23</h1>
-              </div>
-              <div>
-                <div className="btn btn-danger align-items-center d-flex text-capitalize bg-opacity-25 text-white rounded-pill px-4" style={{
-                  height: "60px",
-                  fontSize: "1.4rem"
-                }} >
-                  pay now
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div className="close-btn
-       ff-shadow d-flex align-items-center
-       justify-content-center   text-light 
-       absolute start-0 top-0"
-            style={{
-              width: "40px",
-              height: "40px",
-              marginLeft: "-45px"
-            }}
-            onClick={(e) => setToggleSideBar(function () {
-              return false
-            })}>
-            <RiCloseFill size={30}
-              className="text-danger fw-bold" />
-
-
-
-          </div>
-          <div className="container position-relative" >
-
-
-
-
-            <div className="row  align-items-center" style={{
-              marginTop: "-20px"
-            }}>
-              <div className="col p-0">
-                <h3 className='text-center'>Card</h3>
-              </div>
-              <div className="col-2 p-0  d-flex justify-content-end">
-                <img src={_person} alt="user" className='
-              text-dark bg-dark img-fluid
-              border-4 border-danger me-2 rounded-circle' style={{
-                    width: "40px",
-                    height: "40px"
-                  }} />
-                {/* end header */}
-
-
-              </div>
-            </div>
-
-            <div className="d-flex flex-column gap-y-5 mt-2 overflow-auto" style={{
-              height: "100vh"
-            }}>
-              <div className="bg-white  rounded-3">
-                {
-                  ProductData.map(({ productImage, productPrice, productName, productDescript }, index) => <Card
-                    key={index} price={productPrice} closeSidebar={setToggleSideBar} productId={index}
-                    description={productDescript} item_name={productName} imgUrl={productImage[0]} />)
-                }
-
-              </div>
-            </div>
-            {/* </div> */}
-          </div>
-
-
-        </div>
-      </div>
+   
       <div className="header__top-strip py-1 pb-0
       shadow   bg-dark  position-relative">
         <div className="container-xxl d-none d-sm-block overflow-hidden">
@@ -173,16 +75,15 @@ navigate("/our-store?name=paul&age=45&search="+search)
             </div>
             <div className="col-md-8 col-lg 
             d-flex align-items-center border-0 ">
-              <div className="input-group ">
+              <div className="input-group border   border-dark rounded-pill overflow-hidden">
                 <input type="text"
                   className='form-control ps-3 '
-                  placeholder='Search product here .. ' value={search}
-                  // aria-controls='Search product here ..'
-                  // aria-describedby='basic-addon2'
-                  onInput={e=>setSearch(e.target.value)}
-                  onKeyDown={e=>{
-                  if(e.key=="Enter") return handleSearch(e)
-                  
+                  placeholder='Search product here .. '
+                  value={search}
+                  onInput={e => setSearch(e.target.value)}
+                  onKeyDown={e => {
+                    if (e.keyCode == "13") return handleSearch(e)
+
                   }}
                 />
                 <span className='input-group-text bg-warning'
