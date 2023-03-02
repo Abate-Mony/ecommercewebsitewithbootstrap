@@ -5,7 +5,6 @@ import {
   service_01, service_02, service_03, service_04,
   service_05, laptop, camera, tv, acc, homeapp, headphone, watch, speaker
 } from "./image"
-import womenbanner from '../../Constants/images/womens-banner.jpg'
 import menbanner from '../../Constants/images/mens-banner.jpg'
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -18,6 +17,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper'
 import { useNavigate } from 'react-router-dom'
+import {Sidebar} from '../../components'
 const Home = () => {
 
   const navigate = useNavigate()
@@ -113,7 +113,6 @@ const Home = () => {
     localStorage.setItem("sellam", "hello")
 
   }
-
 
 
 

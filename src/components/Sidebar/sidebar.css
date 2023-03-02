@@ -1,0 +1,72 @@
+.side__bar-container {
+    position: fixed;
+    inset: 0;
+    height: 100svh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 200;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transition: visibility 0.3s ease, opacity 0.2s ease;
+}
+
+.side__bar-container.active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
+}
+
+.side__bar-container .side__bar-content {
+    width: 300px;
+    max-width: calc(100vh - 50px);
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    transition: left 0.3s ease;
+}
+
+.side__bar-container .side__bar-content.active {
+    left: 0;
+}
+
+.side__bar-container .side__bar-content .close-btn {
+    width: 50px;
+    height: 50px;
+    /* background: orangered; */
+    position: absolute;
+    right: -50px;
+    top: 0;
+}
+
+.side__bar-content .side__bar-list-contents.active .chevron {
+    transform: rotate(180deg);
+    color: white;
+    transition: color 0.4s ease;
+}
+
+.side__bar-container .side__bar-list-contents ul {
+    max-height: 0;
+    overflow: hidden;
+}
+
+.side__bar-container .side__bar-list-contents.active ul {
+    max-height: 1000px;
+    transition: max-height 0.5s ease;
+}
+
+.side__bar-container .side__bar-list-contents.active span {
+    transition: background-color 0.5s ease;
+    background: var(--dark-color);
+}
+
+.side__bar-container .side__bar-list-contents span {
+    background-color: white;
+}
+
+.side__bar-container .side__bar-list-contents.active .sidebar__items-name {
+    background-color: rgb(224, 213, 213, 0.2);
+}

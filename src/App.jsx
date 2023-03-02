@@ -11,17 +11,20 @@ import { useState } from 'react'
 import "/node_modules/flag-icons/css/flag-icons.min.css"
 
 function App() {
-    const [toggleSideBar, setToggleSideBar] = useState(false)
+    const [_, setToggleSideBar] = useState(false)
+    const [toggleRightSideBar,setToggleRightSideBar]=useState(false)
 
     return (
-        <div className={`bg-light fw-lighter ${toggleSideBar ? "overflow-hidden" : "overflow-auto"}`} style={{
+        <div className={`bg-light fw-lighter`} style={{
             overflowX: "hidden !important"
         }} >
             <Routes>
                 <Route path="/" element={<Layout
-                    setToggleSideBar={setToggleSideBar
-                    } toggleSideBar={toggleSideBar} />}>
-                    <Route index element={<Home />} />
+                     setToggleRightSideBar={setToggleRightSideBar}
+                     toggleRightSideBar={toggleRightSideBar}
+                     />}>
+                    <Route index element={<Home
+                    />} />
                     <Route path="about" element={<About />} />
                     <Route path="contact" element={<Contact />} />
                     <Route path='product/:id' element={<Product />} />

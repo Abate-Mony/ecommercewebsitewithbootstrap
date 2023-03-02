@@ -134,10 +134,10 @@ const Auth = () => {
                             }}>
                             </div>
 
-                            <p className='fs-6 text-center    button login active' style={{
+                            <p className=' text-center    button login active' style={{
                                 width: "100px"
                             }} >Login</p>
-                            <p className='fs-6 text-center  button  register' style={{
+                            <p className=' text-center  button  register' style={{
                                 width: "100px"
                             }}  >Register</p>
 
