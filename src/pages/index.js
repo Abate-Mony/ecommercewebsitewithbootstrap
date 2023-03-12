@@ -13,6 +13,7 @@ import Auth from "./Auth/Auth";
 import Blog from "./Blog/Blog";
 import Categories from "./Categories/Categories";
 import Cart from "./Cart/Cart"
+import News from "./News/News"
 export {
     Home,
     About,
@@ -24,5 +25,6 @@ export {
     Auth,
     Blog,
     Categories,
-    Cart
+    Cart,
+    News
 }

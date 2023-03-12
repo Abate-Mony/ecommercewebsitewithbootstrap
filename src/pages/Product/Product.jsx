@@ -1,5 +1,5 @@
 import './product.css'
-import { useParams } from 'react-router-dom'
+import { useParams,useNavigate } from 'react-router-dom'
 import { ProductData } from '../../Constants/ProductImage'
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay, EffectCube } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -10,6 +10,8 @@ import { useEffect, useRef, useState } from 'react'
 import ReactStars from 'react-rating-stars-component'
 import { BiShare } from 'react-icons/bi'
 import { MdFavorite, MdOutlineRecommend } from 'react-icons/md'
+import { useCart } from '../../components/CardData'
+
 
 
 
@@ -18,21 +20,24 @@ import 'swiper/css/effect-cube'
 import 'swiper/css/pagination'
 import { MdCompareArrows, MdOutlineLocalShipping } from 'react-icons/md'
 const Product = () => {
+var { id } = useParams()
+  const navigate=useNavigate()
+  const { addToCart, removefromcart ,isItemInCart} = useCart()
+
   var ismobilescreen = window.innerWidth < 480;
-  const [addtocart, setAddtocard] = useState(false)
+  const [addtocart, setAddtocard] = useState(isItemInCart(Number(id)))
   const [counter, setCounter] = useState(1)
   const [backhistory_pushed, setBackhistory_pushed] = useState(false)
-  var { id } = useParams()
 
   const btnContainer = useRef(null)
   useEffect(() => {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "smooth"
+      // behavior: "smooth"
     });
     setCounter(1)
-    setAddtocard(false)
+    setAddtocard(isItemInCart(Number(id)))
 
   }, [id])
   useEffect(() => {
@@ -57,6 +62,17 @@ const Product = () => {
     })
 
   }, [backhistory_pushed])
+
+  useEffect(() => { const _id=Number(id); console.log(_id)
+    if (addtocart) {
+      addToCart(_id)
+      setCounter(1)
+      
+      return
+    } removefromcart(_id)
+    // removeFromCart(id)
+
+  }, [addtocart])
   const [active, setActive] = useState(false)
 
   const handleOpenModal = () => {
@@ -163,11 +179,10 @@ const Product = () => {
                 {ProductData[id]?.productImage?.map((imgUrl, index) => {
                   return (
                     <SwiperSlide>
-                      <div className="product__img-container w-100" key={index}>
+                      <div className="product__img-container w-100 product__img-container" key={index}>
                         <img src={imgUrl} alt={index} className='w-100' style={{
-                          height: "25rem",
                           maxHeight: "calc(100vh - 40px)",
-                          objectFit:"cover"
+                          objectFit: "cover"
                         }} />
                       </div>
                     </SwiperSlide>
@@ -247,10 +262,8 @@ const Product = () => {
                   <span>{counter}</span>
                   <span onClick={() => setCounter(() => counter + 1)}>+</span>
                 </div>
-                <div className="col mx-0 p-0" onClick={() => setAddtocard((addtocart) => {
-                  if (addtocart) {
-                    setCounter(1)
-                  }
+                <div className="col mx-0 p-0 position" onClick={() => setAddtocard((addtocart) => {
+                  
                   return !addtocart
                 })}>
                   <div className={`btn ${addtocart ? "btn-outline-danger" : "btn-outline-dark"} rounded-1 w-100`}>
@@ -260,6 +273,9 @@ const Product = () => {
               </div>
               <div className="btn btn-dark rounded-1 w-100 py-2 my-3 ">
                 BUY NOW
+              </div>
+              <div className="btn btn-outline-dark rounded-1 text-uppercase w-100 py-2 my-3 mt-0 " onClick={()=>navigate("/cart")}>
+              view cart
               </div>
               <div className="d-flex flex-wrap text-capitalize gap-2 mb-5">
                 <span>add to wishlist</span>
@@ -437,11 +453,11 @@ const Product = () => {
           <h1 className="fs-1 fw-light mb-4 mt-4">Related Products </h1>
           <div className="row gx-1 gy-2">
             {
-              ProductData.slice(0, 4).sort(() => 0.5 - Math.random()).map((item, index) => {
-                return <Related
+              ProductData.slice().sort(() => 0.5 - Math.random()).slice(0,4).map((item, index) => {
+                return <Related price={item.productPrice} cancelPrice={item.productCancel}
                   col_lg={3} imgUrl={item.productImage[0]}
                   imgOverlayUrl={item.productImage[1]}
-                  descriptions={item.productDescript} productId={index} brand={item.productName} onClick={() => document.scrollTo(0)} />
+                  descriptions={item.productDescript} productId={item._id} brand={item.productName} onClick={() => document.scrollTo(0)} />
 
               })
             }

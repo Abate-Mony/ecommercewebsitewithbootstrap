@@ -2,4 +2,24 @@
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 0.2rem;
+    transform: translate(0);
+    opacity: 1;
+}
+
+.card-grid.remove {
+    transition: transform 0.5s ease, opacity 0.3s ease 0.1s;
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+@media screen and (min-width:992px) {
+    .card-grid.remove {
+        transform: translateY(200%)
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .card-grid.remove {
+        transform: translateY(300%)
+    }
 }

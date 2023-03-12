@@ -269,7 +269,7 @@ const Home = () => {
               ProductData.map((item, index) => {
 
                 return (
-                  <ProdutCard price={item.productPrice} cancelPrice={item.cancelPrice}
+                  <ProdutCard price={item.productPrice} cancelPrice={item.productCancel}
                     imgOverlayUrl={item.productImage[0]}
                     col_lg={3} col_md={4} imgUrl={item.productImage[1]} index={index}
                     descriptions={item.productDescript} brand={item.productName} key={index} productId={index} />

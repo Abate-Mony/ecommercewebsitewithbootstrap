@@ -117,7 +117,7 @@ const ProductDataElectronic = [{
             ],
             productName: "HeadPhones",
             productDescript: "Scale with the best sound width ultra band width ",
-            productPrice: 1223,
+            productPrice: 60,
             productCancel: 222
 
         },
@@ -144,7 +144,7 @@ const ProductDataElectronic = [{
             ],
             productName: "S33 UltraSlim earphones",
             productDescript: "Small decimal scale product with all you need for the best sound " + < br / > +"Wiresless version of version 2.03 with transmittin speed rated at 2.0 to 2.22 ",
-            productPrice: 1223,
+            productPrice: 45,
             productCancel: 222
 
         }, {
@@ -157,8 +157,8 @@ const ProductDataElectronic = [{
             ],
             productName: "Earphones",
             productDescript: "Find the best Earphoness here ",
-            productPrice: 1223,
-            productCancel: 222
+            productPrice: 23,
+            productCancel: 22
 
         }, {
             _id: 4,
@@ -168,10 +168,10 @@ const ProductDataElectronic = [{
                 earphones_b_3,
                 earphones_b_4,
             ],
-            productName: "Earphones",
+            productName: "Earphones slate200",
             productDescript: "Find the best Earphoness here ",
-            productPrice: 1223,
-            productCancel: 222
+            productPrice: 43,
+            productCancel: 22
 
         },
         {
@@ -183,10 +183,10 @@ const ProductDataElectronic = [{
                 earphones_c_3,
                 earphones_c_4,
             ],
-            productName: "Earphones",
+            productName: "Wireless Headphone 12.0",
             productDescript: "Find the best Earphoness here ",
-            productPrice: 1223,
-            productCancel: 222
+            productPrice: 199,
+            productCancel: 202
 
         },
         {
@@ -199,8 +199,8 @@ const ProductDataElectronic = [{
             ],
             productName: "Speaker",
             productDescript: "Find the best Speakerss here ",
-            productPrice: 1223,
-            productCancel: 222
+            productPrice: 13,
+            productCancel: 20
 
         },
 
@@ -215,8 +215,8 @@ const ProductDataElectronic = [{
             ],
             productName: "Watches",
             productDescript: "Find the best Speakerss here ",
-            productPrice: 1223,
-            productCancel: 222
+            productPrice: 99,
+            productCancel: 100
 
         },
         {
@@ -229,8 +229,8 @@ const ProductDataElectronic = [{
             ],
             productName: "Jackets",
             productDescript: "Roller scoster ",
-            productPrice: 1223,
-            productCancel: 222
+            productPrice: 35,
+            productCancel: 44
 
         },
         {
@@ -244,8 +244,8 @@ const ProductDataElectronic = [{
             ],
             productName: "Short for shot",
             productDescript: "Clean brown white shrt ",
-            productPrice: 1223,
-            productCancel: 222
+            productPrice: 15,
+            productCancel: 22
 
         },
         {
@@ -259,8 +259,8 @@ const ProductDataElectronic = [{
             ],
             productName: "Shirt for Men !",
             productDescript: "Clean brown white shrt ",
-            productPrice: 1223,
-            productCancel: 222
+            productPrice: 9,
+            productCancel: 12
 
         },
         {
@@ -273,8 +273,8 @@ const ProductDataElectronic = [{
             ],
             productName: "Hoodie",
             productDescript: "Clean brown white shrt ",
-            productPrice: 1223,
-            productCancel: 222
+            productPrice: 25,
+            productCancel: 30
 
         },
         {
@@ -287,8 +287,8 @@ const ProductDataElectronic = [{
             ],
             productName: "nikes trousers",
             productDescript: "Clean brown white shrt ",
-            productPrice: 1223,
-            productCancel: 222
+            productPrice: 9,
+            productCancel: 14
 
         },
 

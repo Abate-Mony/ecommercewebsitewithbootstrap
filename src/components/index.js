@@ -7,6 +7,7 @@ import Card from './Card/Card'
 import Product from './Product/Product'
 import Sidebar from './Sidebar/Sidebar'
 import Categorycard from './Categorycard/Categorycard'
+import NewsCard from './NewCard/NewsCard'
 
 export {
     Footer,
@@ -15,5 +16,6 @@ export {
     Card,
     Product,
     Categorycard,
-    Sidebar
+    Sidebar,
+    NewsCard
 }

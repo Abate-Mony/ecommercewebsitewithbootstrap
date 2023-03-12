@@ -7,10 +7,11 @@ import { BsBag } from 'react-icons/bs'
 import { RiCloseFill } from 'react-icons/ri'
 import _person from './../../Constants/clothimages/product_02.jpg'
 import { useState } from 'react'
+import { useCart } from '../../components/CardData'
 
 
 
-const Header = ({ setToggleSideBar }) => {
+const Header = ({ setToggleSideBar }) => { const {getLength}=useCart();
   const navigate = useNavigate()
   const [search, setSearch] = useState("")
   const handleSearch = (e) => {
@@ -60,7 +61,7 @@ const Header = ({ setToggleSideBar }) => {
                   <div className="position-absolute  " style={{
                     top: "-6px", right: "-5px"
                   }}>
-                    <div className="btn btn-danger rounded-circle p-0 d-flex align-items-center justify-content-center" style={{ fontSize: "0.5rem", width: "15px", height: "15px" }}>0</div>
+                    <div className="btn btn-danger rounded-circle p-0 d-flex align-items-center justify-content-center" style={{ fontSize: "0.5rem", width: "15px", height: "15px" }}>{getLength}</div>
                   </div>
                   <NavLink to="/cart">
                     <BsBag color='white' />

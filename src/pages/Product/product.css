@@ -73,3 +73,19 @@
 .product__details-container li {
     font-weight: 300;
 }
+
+.product__img-container img {
+    height: 25rem;
+}
+
+@media screen and (min-width:992px) {
+    .product__img-container img {
+        height: 30rem;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .product__img-container img {
+        height: 35rem;
+    }
+}

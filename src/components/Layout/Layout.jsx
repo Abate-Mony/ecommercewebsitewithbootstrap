@@ -6,12 +6,14 @@ import { Outlet, useNavigate } from 'react-router-dom'
 import { Header, Footer } from '../'
 import { AiOutlineHome, AiOutlineMenu, AiOutlineStar } from 'react-icons/ai'
 import { BsBag } from 'react-icons/bs'
+import { useCart } from '../../components/CardData'
 import { NavLink } from "react-router-dom"
 const vibrateConst = 20
 const Layout = ({ setToggleRightSideBar,toggleRightSideBar }) => {
   const navigate = useNavigate()
   var counter = 0
-  const [up, setUp] = useState(0);
+const {getLength}=useCart()
+const [up, setUp] = useState(0);  
   const [selected, setSelected] = useState(0);
 
   useEffect(() => {
@@ -64,7 +66,7 @@ const Layout = ({ setToggleRightSideBar,toggleRightSideBar }) => {
       }}>
 
         <div className="btn btn-danger rounded-circle p-0 d-flex align-items-center justify-content-center"
-          style={{ fontSize: "0.5rem", width: "15px", height: "15px" }}>0</div>
+          style={{ fontSize: "0.5rem", width: "15px", height: "15px" }}>{getLength}</div>
       </div>
     </div>
 

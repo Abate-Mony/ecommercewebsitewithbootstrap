@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { AiOutlineArrowLeft } from 'react-icons/ai'
-import { shoes as _shoes, ProductData } from '../../Constants/ProductImage'
+import { ProductData } from '../../Constants/ProductImage'
 import { MdOutlineWindow } from 'react-icons/md'
 import './caterogies.css'
 import { FaList } from 'react-icons/fa'
@@ -9,11 +9,13 @@ import { Categorycard } from '../../components'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper'
 import { BsSearch } from 'react-icons/bs'
-// import { Value } from 'sass'
 
 const Categories = () => {
+    // const animate = useRef(second)
+    const [animate, setanimate] = useState(false)
     const [length, setLength] = useState(0)
     useEffect(() => {
+        setanimate(true)
         window.scrollTo({
             top: 0,
             left: 0,
@@ -27,26 +29,15 @@ const Categories = () => {
     const [name, setName] = useState("*")
     const handleNameChange = (name) => {
 
-        // if (name === "all") {
-        //     setProduct([...ProductData])
-        // } else {
-        //     const temp = ProductData.filter((item) => item.productName.toLowerCase()
-        //         .includes(name))
-        //     setProduct([...temp])
-        // setLength(product.length)
-
-
-        // }
         setName(name)
         handleSearch(name)
-        // setSearch(name)
     }
     const params = new URLSearchParams(window.location.search)
     const [search, setSearch] = useState("")
 
     const handleSearch = (value) => {
-        if (value === "*" || value === "" || value === " " ) {
-        
+        if (value === "*" || value === "" || value === " ") {
+
             setProduct([...ProductData])
             setSearch(value.trim())
             return
@@ -59,6 +50,8 @@ const Categories = () => {
     }
 
     useEffect(() => {
+
+
         const _search = params.get("search")
         if (_search) {
             handleSearch(_search)
@@ -80,7 +73,7 @@ const Categories = () => {
                         height: "70px"
                     }} >
 
-                    <span onClick={() => navigate("/")}><AiOutlineArrowLeft size={20} /></span>
+                    <span onClick={() => navigate(-1)}><AiOutlineArrowLeft size={20} /></span>
                     <h2 className="fs-6 ff-manrope fw-bold mb-0">Our Store /<span className='fw-lighter text-muted' style={{
 
                         fontSize: "15px"
@@ -172,7 +165,7 @@ const Categories = () => {
 
                         <p style={{
                             flex: "none"
-                        }} className="mb-0 fw-semibold ff-manrope px-3" onClick={() => {
+                        }} className="mb-0 fw-semibold ff-manrope px-3 store__link" onClick={() => {
                             handleNameChange("*")
                         }}>
                             All
@@ -182,7 +175,7 @@ const Categories = () => {
                     <SwiperSlide >
                         <p style={{
                             flex: "none"
-                        }} className="mb-0 fw-semibold ff-manrope px-3" onClick={() => {
+                        }} className="mb-0 fw-semibold ff-manrope px-3 store__link" onClick={() => {
                             handleNameChange("jacket")
                         }}>
                             Jackets
@@ -191,7 +184,7 @@ const Categories = () => {
                     <SwiperSlide >
                         <p style={{
                             flex: "none"
-                        }} className="mb-0 fw-semibold ff-manrope px-3" onClick={() => {
+                        }} className="mb-0 fw-semibold ff-manrope px-3 store__link" onClick={() => {
                             handleNameChange("watch")
                         }}>
                             Watches
@@ -200,7 +193,7 @@ const Categories = () => {
                     <SwiperSlide >
                         <p style={{
                             flex: "none"
-                        }} className="mb-0 fw-semibold ff-manrope px-3" onClick={() => {
+                        }} className="mb-0 fw-semibold ff-manrope px-3 store__link" onClick={() => {
                             handleNameChange("shirt")
                         }}>
                             Shirts
@@ -209,7 +202,7 @@ const Categories = () => {
                     <SwiperSlide>
                         <p style={{
                             flex: "none"
-                        }} className="mb-0 fw-semibold ff-manrope px-3" onClick={() => {
+                        }} className="mb-0 fw-semibold ff-manrope px-3 store__link" onClick={() => {
                             handleNameChange("short")
                         }}>
                             shots
@@ -219,7 +212,7 @@ const Categories = () => {
                     <SwiperSlide>
                         <p style={{
                             flex: "none"
-                        }} className="mb-0 fw-semibold ff-manrope px-3" onClick={() => {
+                        }} className="mb-0 fw-semibold ff-manrope px-3 store__link" onClick={() => {
                             handleNameChange("trouser")
                         }}>
                             Trousers
@@ -229,7 +222,7 @@ const Categories = () => {
                     <SwiperSlide>
                         <p style={{
                             flex: "none"
-                        }} className="mb-0 fw-semibold ff-manrope px-3" onClick={() => {
+                        }} className="mb-0 fw-semibold ff-manrope px-3 store__link" onClick={() => {
                             handleNameChange("ear")
                         }}>
                             Headsets
@@ -239,7 +232,7 @@ const Categories = () => {
                     <SwiperSlide>
                         <p style={{
                             flex: "none"
-                        }} className="mb-0 fw-semibold ff-manrope px-3">
+                        }} className="mb-0 fw-semibold ff-manrope px-3 store__link">
                             Pants
 
                         </p>
@@ -264,11 +257,11 @@ const Categories = () => {
                     aria-controls='Search product here ..'
                     aria-describedby='basic-addon2'
                     value={search}
-                    onInput={e => handleSearch(e.target.value)} onFocus={()=>setSearch("")}
+                    onInput={e => handleSearch(e.target.value)} onFocus={() => setSearch("")}
                 />
             </div>
 
-            <div className="container" >
+            <div className={`container store__container ${animate ? "active" : ""}`} >
                 <div className=" overflow-auto scrollto pt-3 pb-6" style={{
                     height: "calc(100vh - 155px)",
                     overflowX: "hidden !important"
@@ -276,7 +269,8 @@ const Categories = () => {
                     <div className="row  gy-3">
                         {
                             product.length > 0 ? (product.map((item, index) =>
-                                <Categorycard _id={item._id} shoe={item.productImage[0]} view={view} key={index} />)) :
+                                <Categorycard _id={item._id} cancelPrice={item.productCancel}
+                                    price={item.productPrice} imgUrl={item.productImage[0]} view={view} key={index} />)) :
                                 <>
 
                                     {/* <h1 className="fs-4 fw-lighter mt-4 text-center">Couldn,t find <span

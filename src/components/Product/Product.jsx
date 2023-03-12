@@ -11,8 +11,8 @@ imgOverlayUrl, deductPercent, productId, col_lg, col_md }, index) {
   if (!col_md) {
     col_md = 4
   }
-  cancelPrice=200
-  price=237
+  // cancelPrice=200
+  // price=237
   deductPercent=44
 const startscount=Math.floor(Math.random()*6)
 const navigate = Goto()
@@ -45,10 +45,10 @@ const navigate = Goto()
           <div className="home__collection-img_overlay-container position-absolute w-100 h-100 top-0 start-0 end-0 ">
             <img src={imgOverlayUrl} alt={index} className="img-fluid w-100" />
           </div>
-          <div className="home__collection-price_container d-flex justify-content-between gap-1 mt-0 ff-manrope position-absolute bottom-0">
+          <div className="home__collection-price_container d-flex justify-content-between gap-1 mt-0 ff-manrope position-absolute bottom-0 px-1">
                 <div className="d-flex gap-1 gap-md-2">
-                <p className={` fw-bold  ${cancelPrice && "text-danger"}`}>{`$${price}`}</p>
-                {cancelPrice && <p> <strike className="text-muted">{`$${cancelPrice}`}</strike></p>}</div>
+                <p className={`   ${cancelPrice && "text-danger"}`} style={{fontWeight:"200"}}>{`$${price}`}</p>
+                {cancelPrice && <p className="text-warning text-decoration-line-through fs-6 " style={{fontWeight:"200"}}>{`$${cancelPrice}`}</p>}</div>
                 
                 <div className="d-flex flex-wrap align-items-center gap-1 gap-sm-2 mb-1 border-0 m-0 ">
                 <ReactStars count={5} 

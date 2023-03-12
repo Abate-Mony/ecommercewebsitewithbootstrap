@@ -5,9 +5,9 @@
 .condition__search-box {
     visibility: hidden;
     pointer-events: none;
-    transform: translateY(10px);
+    transform: translateY(40px);
     opacity: 0;
-    transition: all 0.3s ease;
+    transition: all 1s ease;
 }
 
 .condition__search-box.active {
@@ -15,4 +15,23 @@
     pointer-events: all;
     opacity: 1;
     transform: translateY(0px);
+}
+
+.store__link {
+    transition: color 0.3s ease;
+}
+
+.store__link:hover {
+    color: rgb(152, 92, 208);
+}
+
+.store__container {
+    transform: translateY(20px);
+    transition: transform 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.store__container.active {
+    transform: translateY(0px);
+    opacity: 1;
 }

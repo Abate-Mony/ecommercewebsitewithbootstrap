@@ -11,7 +11,7 @@ const NewsCard = ({ imgUrl, heading, text1, text2 ,index}) => {
                     <img src={imgUrl} alt="newimage" className='img-fluid w-100' />
                 </div>
                 <div className="px-3 pt-4">
-                    <p className="text-muted mb-2">11 of december 2020</p>
+                    <p className="text-muted mb-2">{text1}</p>
                     <h3 className='fw-bolder'>{heading}</h3>
                     <p className='text-muted'>{text2}</p>
                     <div className="btn btn-lg py-1 bg-dark text-white rounded-pill text-uppercase px-4">Read More</div>

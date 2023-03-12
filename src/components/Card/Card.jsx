@@ -3,14 +3,28 @@ import './card.css'
 import _person from './../../Constants/clothimages/product_02.jpg'
 import { useState, useRef } from 'react'
 import { RiCloseFill } from 'react-icons/ri'
-import { useNavigate } from 'react-router-dom'
-const Card = ({ price, item_name, description, imgUrl, productId }) => {
+import { useCart } from '../../components/CardData'
+import { useNavigate } from 'react-router-dom';
+const Card = ({ price, item_name, description, imgUrl, productId, index }) => {
   const [counter, setCounter] = useState(1)
-  const parent = useRef(null)
-  const navigate = useNavigate()
+  const { removefromcart } = useCart();
+  const [remove, setRemove] = useState(false)
+  const navigate = useNavigate();
+  const parentElm=useRef(null)
+  const handleRemove = (e) => {
+  parentElm.current.classList.add("remove")
+    // setRemove(true);
+  
+    setTimeout(() => {
+      removefromcart(Number(productId));
+  parentElm.current.classList.remove("remove")
+      
+    }, 500);
+  }
   return (
 
-    <div className="card-grid my-2  rounded-3 shadow p-2 align-items-center col-md-6 col-lg-4" ref={parent}>
+    <div className={`card-grid my-2  rounded-3 shadow p-2 align-items-center col-md-6 col-lg-4 ${remove ? "remove" : ""}`} key={index}
+  ref={parentElm}  >
       <div className="m-0">
         <img src={imgUrl} alt="user" className='
 text-dark bg-dark img-fluid
@@ -40,7 +54,7 @@ border-4 border-danger me-2 rounded-3' style={{
             style={{
               height: "20px",
               width: "20px",
-            }} onClick={() => parent.current.remove()}
+            }} onClick={handleRemove}
           > <RiCloseFill size={20} color="white" />  </div>
         </div>
         <div className="d-flex justify-content-between align-items-center ">
