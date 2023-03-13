@@ -1,10 +1,10 @@
 import './product.css'
-import { useParams,useNavigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { ProductData } from '../../Constants/ProductImage'
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay, EffectCube } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { Product as Related } from '../../components'
+import { Product as Related, CardAnimation } from '../../components'
 import { AiFillStar } from 'react-icons/ai'
 import { useEffect, useRef, useState } from 'react'
 import ReactStars from 'react-rating-stars-component'
@@ -20,9 +20,9 @@ import 'swiper/css/effect-cube'
 import 'swiper/css/pagination'
 import { MdCompareArrows, MdOutlineLocalShipping } from 'react-icons/md'
 const Product = () => {
-var { id } = useParams()
-  const navigate=useNavigate()
-  const { addToCart, removefromcart ,isItemInCart} = useCart()
+  var { id } = useParams()
+  const navigate = useNavigate()
+  const { addToCart, removefromcart, isItemInCart } = useCart()
 
   var ismobilescreen = window.innerWidth < 480;
   const [addtocart, setAddtocard] = useState(isItemInCart(Number(id)))
@@ -30,11 +30,16 @@ var { id } = useParams()
   const [backhistory_pushed, setBackhistory_pushed] = useState(false)
 
   const btnContainer = useRef(null)
+
+  // const cardButton = useRef(null)
+  // const [start,setStart]=useStart
+  const [direction, setDirection] = useState({
+    top: 0, left: 0
+  })
   useEffect(() => {
     window.scrollTo({
       top: 0,
       left: 0,
-      // behavior: "smooth"
     });
     setCounter(1)
     setAddtocard(isItemInCart(Number(id)))
@@ -63,14 +68,14 @@ var { id } = useParams()
 
   }, [backhistory_pushed])
 
-  useEffect(() => { const _id=Number(id); console.log(_id)
+  useEffect(() => {
+    const _id = Number(id); console.log(_id)
     if (addtocart) {
       addToCart(_id)
       setCounter(1)
-      
+
       return
     } removefromcart(_id)
-    // removeFromCart(id)
 
   }, [addtocart])
   const [active, setActive] = useState(false)
@@ -85,9 +90,17 @@ var { id } = useParams()
     setActive(true)
 
   }
+
+  const handleAnimate = e => {
+    const { target: targetElm } = e
+    const { left, bottom, width } = targetElm.getBoundingClientRect();
+    const x_dir = (left + width) - 40;
+    setDirection({ top: bottom, left: x_dir })
+  }
   return (
     <div className='bg-light text-center text-dark d-flex align-items-center justify-content-center  py-5 review__alert-wrapper'  >
-
+      {/* card animation will be place here because its poistion is fixed */}
+      {/* <CardAnimation top={direction.top} left={direction.left} toggle={addtocart} /> */}
       {/* modal here */}
       <div className={`overlay ${active ? "active" : ""}`} onClick={() => setActive(false)}>
         <div className={`alert__container shadow-lg text-start py-3 pt-0 overflow-hidden bg-light  ${active ? "active" : ""}`} onClick={(e) => e.stopPropagation()}>
@@ -263,10 +276,11 @@ var { id } = useParams()
                   <span onClick={() => setCounter(() => counter + 1)}>+</span>
                 </div>
                 <div className="col mx-0 p-0 position" onClick={() => setAddtocard((addtocart) => {
-                  
+
                   return !addtocart
                 })}>
-                  <div className={`btn ${addtocart ? "btn-outline-danger" : "btn-outline-dark"} rounded-1 w-100`}>
+                  <div className={`btn ${addtocart
+                    ? "btn-outline-danger" : "btn-outline-dark"} rounded-1 w-100`} onClick={handleAnimate}>
                     {addtocart ? "Remove From Cart" : "ADD TO CART"}
                   </div>
                 </div>
@@ -274,8 +288,8 @@ var { id } = useParams()
               <div className="btn btn-dark rounded-1 w-100 py-2 my-3 ">
                 BUY NOW
               </div>
-              <div className="btn btn-outline-dark rounded-1 text-uppercase w-100 py-2 my-3 mt-0 " onClick={()=>navigate("/cart")}>
-              view cart
+              <div className="btn btn-outline-dark rounded-1 text-uppercase w-100 py-2 my-3 mt-0 " onClick={() => navigate("/cart")}>
+                view cart
               </div>
               <div className="d-flex flex-wrap text-capitalize gap-2 mb-5">
                 <span>add to wishlist</span>
@@ -453,7 +467,7 @@ var { id } = useParams()
           <h1 className="fs-1 fw-light mb-4 mt-4">Related Products </h1>
           <div className="row gx-1 gy-2">
             {
-              ProductData.slice().sort(() => 0.5 - Math.random()).slice(0,4).map((item, index) => {
+              ProductData.slice().sort(() => 0.5 - Math.random()).slice(0, 4).map((item, index) => {
                 return <Related price={item.productPrice} cancelPrice={item.productCancel}
                   col_lg={3} imgUrl={item.productImage[0]}
                   imgOverlayUrl={item.productImage[1]}

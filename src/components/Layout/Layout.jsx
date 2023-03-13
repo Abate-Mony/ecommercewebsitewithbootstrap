@@ -1,21 +1,22 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { AiOutlineArrowUp } from 'react-icons/ai'
-import {Sidebar} from '../../components'
+import { Sidebar } from '../../components'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { Header, Footer } from '../'
 import { AiOutlineHome, AiOutlineMenu, AiOutlineStar } from 'react-icons/ai'
 import { BsBag } from 'react-icons/bs'
 import { useCart } from '../../components/CardData'
 import { NavLink } from "react-router-dom"
+import './layout.css'
 const vibrateConst = 20
-const Layout = ({ setToggleRightSideBar,toggleRightSideBar }) => {
+const Layout = ({ setToggleRightSideBar, toggleRightSideBar }) => {
   const navigate = useNavigate()
   var counter = 0
-const {getLength}=useCart()
-const [up, setUp] = useState(0);  
+  const { getLength } = useCart()
+  const [up, setUp] = useState(0);
   const [selected, setSelected] = useState(0);
-
+  const cardContainer = useRef(null)
   useEffect(() => {
     window.addEventListener("scroll", () => {
       const { pageYOffset } = window
@@ -29,8 +30,15 @@ const [up, setUp] = useState(0);
     })
 
   }, [])
-
-
+  let _timer = null
+  useEffect(() => {
+    clearTimeout(_timer)
+    const { current } = cardContainer
+    current.classList.add("scale-container")
+    _timer = setTimeout(() => {
+      current.classList.remove("scale-container")
+    }, 1000)
+  }, [getLength])
   const menuItems = [
     <NavLink className={"text-center  bg-white"} to={"/"} onClick={function () {
       return (window.navigator.vibrate([vibrateConst]))
@@ -43,8 +51,8 @@ const [up, setUp] = useState(0);
     </NavLink>,
     <div className={"text-center  "} to={"/"} onClick={function () {
       window.navigator.vibrate([vibrateConst])
-      setToggleRightSideBar(()=>!toggleRightSideBar)
-      
+      setToggleRightSideBar(() => !toggleRightSideBar)
+
     }}>
       <AiOutlineMenu color='black' size={20} onClick={function () {
         return (window.navigator.vibrate([vibrateConst]))
@@ -62,8 +70,8 @@ const [up, setUp] = useState(0);
     , <div className="position-relative" onClick={() => navigate("/cart")}>
       <BsBag color='black' />
       <div className="position-absolute  " style={{
-        top: "-6px", right: "-5px"
-      }}>
+        top: "-6px", right: "-5px", transition: "scale 0.3s ease",
+      }} ref={cardContainer}>
 
         <div className="btn btn-danger rounded-circle p-0 d-flex align-items-center justify-content-center"
           style={{ fontSize: "0.5rem", width: "15px", height: "15px" }}>{getLength}</div>
@@ -73,8 +81,8 @@ const [up, setUp] = useState(0);
   ]
   return (
     <div className=''>
-<Sidebar   setToggleRightSideBar={setToggleRightSideBar} 
-toggleRightSideBar={toggleRightSideBar}/>
+      <Sidebar setToggleRightSideBar={setToggleRightSideBar}
+        toggleRightSideBar={toggleRightSideBar} />
       <div className={`position-fixed top-auto end-0 home__arrow-scroll  rounded-circle bg-white  me-4 shadow d-flex align-items-center ${up == 0 ? "active" : "0"}`}
         style={{
           height: "50px",
@@ -99,9 +107,9 @@ toggleRightSideBar={toggleRightSideBar}/>
           {
             menuItems.map((Item, index) => {
               return (
-              <div className={`text-center d-flex justify-content-center   ${selected==index?"fw-bolder":"fw-lighter"}`} onClick={
-              ()=>setSelected(index)
-              }>{Item} </div>
+                <div className={`text-center d-flex justify-content-center   ${selected == index ? "fw-bolder" : "fw-lighter"}`} onClick={
+                  () => setSelected(index)
+                }>{Item} </div>
               )
             })
 
@@ -109,7 +117,7 @@ toggleRightSideBar={toggleRightSideBar}/>
         </div>
 
       </div>
-      <Footer  />
+      <Footer />
     </div>
   )
 }
