@@ -5,7 +5,8 @@ import { Routes, Route } from 'react-router-dom'
 
 import { Layout } from './components'
 
-import { Home, About, Notfound, Contact, Product, User, Auth, Blog, Categories, Cart } from './pages'
+import { Home, About, Notfound, Contact
+, Product, User, Auth, Blog, Categories, Cart,Checkout } from './pages'
 import { useState } from 'react'
 
 import "/node_modules/flag-icons/css/flag-icons.min.css"
@@ -44,6 +45,8 @@ function App() {
                     <Route path='/auth' element={<Auth />}>
                     </Route>
                     <Route path='/cart' element={<Cart />}>
+                    </Route>
+                    <Route path='/checkout' element={<Checkout />}>
                     </Route>
                     {/* <Route path='/news' element={<News />}>
                     </Route> */}

@@ -14,6 +14,7 @@ import Blog from "./Blog/Blog";
 import Categories from "./Categories/Categories";
 import Cart from "./Cart/Cart"
 import News from "./News/News"
+import Checkout from "./Checkout/Checkout"
 export {
     Home,
     About,
@@ -26,5 +27,6 @@ export {
     Blog,
     Categories,
     Cart,
-    News
+    News,
+    Checkout
 }

@@ -285,7 +285,7 @@ const Product = () => {
                   </div>
                 </div>
               </div>
-              <div className="btn btn-dark rounded-1 w-100 py-2 my-3 ">
+              <div className="btn btn-dark rounded-1 w-100 py-2 my-3 " onClick={()=>navigate("/checkout")}>
                 BUY NOW
               </div>
               <div className="btn btn-outline-dark rounded-1 text-uppercase w-100 py-2 my-3 mt-0 " onClick={() => navigate("/cart")}>

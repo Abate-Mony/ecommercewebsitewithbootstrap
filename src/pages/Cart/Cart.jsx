@@ -32,7 +32,7 @@ const Cart = () => {
                     </div>
                     <div className="btn btn-outline-dark  align-items-center shadow
                             d-flex text-capitalize   rounded-5 px-4 " style={{
-                        }} >
+                        }} onClick={()=>navigate("/checkout")} >
                         pay now
                     </div>
                 </div>

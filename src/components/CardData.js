@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react"
 const CartContext = React.createContext()
 export function useCart() { return useContext(CartContext) }
 export function CartProvider({ children }) {
-    const [cart, setCartData] = useState([]);
+    const [cart, setCartData] = useState([1]);
     const isItemInCart = (id) => cart.includes(id)
     const addToCart = (id) => {
         if (!isItemInCart(id)) {
